@@ -24,36 +24,6 @@ header {
     transform: translateX(-50%);
 }
 
-/* .menu-top {
-    background-color: #fff;
-    width: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-    position: relative;
-    font-size: 80%;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-} */
-
-/* .menu-top {
-    display: flex;
-    align-items: center;
-    margin: 15px 0 6px;
-}
-
-.menu-top p {
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-
-.menu-top p img {
-    margin-left: 10px;
-} */
-
 .menu-top {
     display: flex;
     align-items: center;
@@ -166,9 +136,8 @@ a {
     padding: 10px 30px 10px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-image: url('images/ph_gender-neuter-thin.png');
-    background-position: right 10px center;
-    /* Posición del ícono a la derecha y centrado verticalmente */
+    background-image: url('../images/ph_gender-neuter-thin.png');
+    background-position: left 10px center;
     background-repeat: no-repeat;
     background-size: 20px;
     margin-right: 10px;
@@ -290,25 +259,6 @@ a {
 }
 
 /* pie de pagina */
-/* footer {
-    display: grid;
-    background-color: #f5f5f5;
-    padding: 20px;
-}
-
-.footer-column.main-column {
-    width: 40%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.footer-column {
-    width: 12.5%;
-    color: #333;
-    padding: 10px;
-    text-align: center;
-} */
 footer {
     display: grid;
     grid-template-columns: 2.5fr repeat(5, 1fr); /* la primera columna de doble tamaño, luego 5 columnas normales */
@@ -385,6 +335,57 @@ footer {
     font-weight: bold;
     /* margin-left: 4px; */
 }
+
+/* Estilos para las flechas del slider */
+.slick-prev,
+.slick-next {
+    background-color: #fff;;
+    color: #333
+    font-size: 24px;
+    display: inline-block;
+    /* width: 40px; */
+    height: 40px;
+    line-height: 40px;
+    right: 20px;
+    z-index: 9;
+}
+
+/* .slick-prev:hover,
+.slick-next:hover {
+    background-color: #555;
+} */
+
+.slick-next:before,
+.slick-prev:before {
+    font-family: slick;
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #484545;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Ocultar el texto predeterminado de las flechas */
+/* .slick-prev,
+.slick-next {
+    font-size: 0;
+    line-height: 0;
+    background: none;
+    border: none;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('../images/g1009.png');
+    background-size: cover;
+} */
+
 /* Estilos responsivos */
 @media screen and (max-width: 768px) {
     .menu-top {
@@ -420,24 +421,20 @@ footer {
 
     .menu-text {
         text-align: center;
-        /* Alinear el texto al centro */
     }
 
     .menu-logo {
         margin-bottom: 10px;
-        /* Agregar un margen inferior para separar la imagen */
     }
     
     /* menu */
     /* Ocultar el menú en la versión móvil */
     .menu-section ul {
-        display: none;
-        /* Ocultar el menú en la versión móvil */
+        display: none; /* Ocultar el menú */
     }
 
     .mobile-menu-button {
-        display: block;
-        /* Mostrar el botón en la versión móvil */
+        display: block;  /* Mostrar el botón */
         margin-right: 20px;
     }
 
@@ -449,7 +446,6 @@ footer {
         right: 0;
     }
 
-    /* aqui */
     img.menu-icon-ship, img.menu-icon-store {
         display: none;
     }

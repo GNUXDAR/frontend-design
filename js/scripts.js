@@ -11,60 +11,52 @@ $(document).ready(function() {
         slidesToScroll: 1,
         variableWidth: true,
     });
-});
 
-
-
-// Inicializar Slick Carousel mobvile
-$(document).ready(function() {
+    // Inicializar slick carrousel mmobile
     if ($(window).width() < 768) { // Se activará solo en pantallas con un ancho menor a 768px (versión móvil)
         $('.slider').slick({
-            slidesToShow: 1, // Muestra 1 slide a la vez
-            slidesToScroll: 1, // Desplaza 1 slide a la vez
-            dots: true, // Muestra los puntos de paginación (opcional)
-            arrows: false, // Oculta las flechas de navegación (opcional)
-            centerMode: true, // Centra el slide activo
-            variableWidth: true // Permite que los slides tengan ancho variable
+            slidesToShow: 1, 
+            slidesToScroll: 1, 
+            dots: true, 
+            arrows: false, 
+            centerMode: true, 
+            variableWidth: true
         });
     }else {
         $('.slider').css('display', 'none');
     }
-});
 
-
-$(document).ready(function() {
-    $(".product-slider").slick({
-        slidesToShow: 6, // Muestra 6 productos en la versión de escritorio
-        slidesToScroll: 1, // Desplaza 1 producto a la vez
-        dots: false, // Muestra los puntos de paginación (opcional)
-        arrows: true, // Muestra las flechas de navegación (opcional)
+    $('.product-slider').slick({
+        slidesToShow: 6, 
+        slidesToScroll: 1, 
+        dots: false, 
+        arrows: true, 
         responsive: [
             {
-                breakpoint: 768, // Punto de quiebre para la versión móvil
+                breakpoint: 768, 
                 settings: {
-                    slidesToShow: 1, // Muestra 1 producto en la versión móvil
-                    slidesToScroll: 1, // Desplaza 1 producto a la vez
-                    dots: true, // Muestra los puntos de paginación (opcional)
-                    arrows: true // Muestra las flechas de navegación (opcional)
+                    slidesToShow: 1, 
+                    slidesToScroll: 1, 
+                    dots: true, 
+                    arrows: true 
                 }
             }
         ]
     });
-});
 
-// menu mobile
+    // menu mobie
+    $(document).ready(function() {
+        const mobileMenuButton = $('.mobile-menu-button');
+        const mobileMenuModal = $('.mobile-menu-modal');
+        const closeButton = $('.close-button');
 
-document.addEventListener("DOMContentLoaded", function () {
-    const mobileMenuButton = document.querySelector(".mobile-menu-button");
-    const mobileMenuModal = document.querySelector(".mobile-menu-modal");
-    const closeButton = document.querySelector(".close-button");
+        mobileMenuButton.click(function() {
+            mobileMenuModal.show();
+        });
 
-    mobileMenuButton.addEventListener("click", function () {
-        mobileMenuModal.style.display = "block";
+        closeButton.click(function() {
+            mobileMenuModal.hide();
+        });
     });
 
-    closeButton.addEventListener("click", function () {
-        mobileMenuModal.style.display = "none";
-    });
 });
-
