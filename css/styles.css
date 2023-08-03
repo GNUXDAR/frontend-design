@@ -366,26 +366,6 @@ footer {
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-/* Ocultar el texto predeterminado de las flechas */
-/* .slick-prev,
-.slick-next {
-    font-size: 0;
-    line-height: 0;
-    background: none;
-    border: none;
-}
-
-.slick-prev::before,
-.slick-next::before {
-    content: "";
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-image: url('../images/g1009.png');
-    background-size: cover;
-} */
-
 /* Estilos responsivos */
 @media screen and (max-width: 768px) {
     .menu-top {
