@@ -1,0 +1,559 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ffffff;
+}
+
+.menu-section {
+    background-color: #fff;
+    width: auto; /*100%;*/
+    /* height: 167px; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    /* position: fixed; */
+    position: relative;
+    border-top: solid 1px #7a7676;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* .menu-top {
+    background-color: #fff;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    position: relative;
+    font-size: 80%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+/* .menu-top {
+    display: flex;
+    align-items: center;
+    margin: 15px 0 6px;
+}
+
+.menu-top p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.menu-top p img {
+    margin-left: 10px;
+} */
+
+.menu-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 13px 6px;
+}
+
+.menu-icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 35px;
+}
+
+/* boton de menu mobile */
+.mobile-menu-button {
+    display: none;  /* Ocultar el botón del menu en versión escritorio */
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 6px 0;
+}
+
+.mobile-menu-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 9999;
+}
+
+.mobile-menu-content {
+    background-color: #fff;
+    width: 80%;
+    max-width: 300px;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    bottom: 0;
+    transition: right 0.3s ease;
+}
+
+.mobile-menu-content ul {
+    list-style: none;
+    padding: 20px;
+}
+
+.mobile-menu-content li {
+    margin-bottom: 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 5px;
+}
+
+
+/* search */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-container input[type="text"] {
+    padding: 10px 30px 10px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-image: url('images/ph_gender-neuter-thin.png');
+    background-position: right 10px center;
+    /* Posición del ícono a la derecha y centrado verticalmente */
+    background-repeat: no-repeat;
+    background-size: 20px;
+    margin-right: 10px;
+}
+
+
+/* huincha */
+.huincha {
+    background-color: #bd3b3b;
+    color: #fff;
+    text-align: center;
+    padding: 6px 0;
+    position: relative;
+}
+
+.huincha p {
+    margin: 0;
+    font-size: 10px;
+}
+
+/* banner.section */
+.banner-section {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilos para las imágenes del banner */
+.banner-slide img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: auto; /*100%;**/
+    margin: 0 auto;
+}
+
+
+/* Estilos para la sección de las imágenes */
+.image-section {
+    width: 100%;
+    max-width: 93%;
+    /* height: 381.11541748046875px; */
+    position: relative;
+    top: 50px;
+    left: 44px;
+    display: block;
+    scroll-snap-type: x mandatory;
+    /* desplazamiento lateral */
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* scroll más suave en iOS */
+}
+
+.image-section img {
+    width: calc(33.33% - 10px);
+    /* height: auto; */
+    object-fit: cover;
+    margin-right: 10px;
+    scroll-snap-align: start;
+}
+
+.image-section img:last-child {
+    margin-right: 0; /* Para asegurar que la última imagen no tenga margen derecho */
+}
+
+/* Estilos para el slider de productos */
+.product-slider {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.product-item {
+    text-align: center;
+}
+
+.slider-title, .category-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    font-size: 85%;
+    text-align: left;
+    text-decoration: underline;
+    margin-left: 55px;
+}
+
+.name-product {
+    font-size: 90%;
+}
+
+.home-price {
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+/* Estilos para la sección de categorías */
+.category-section {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.category-item {
+    display: inline-block;
+    max-width: 15.66%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.category-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.name-category {
+    font-size: 85%;
+    text-decoration: underline;
+}
+
+/* pie de pagina */
+/* footer {
+    display: grid;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.footer-column.main-column {
+    width: 40%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.footer-column {
+    width: 12.5%;
+    color: #333;
+    padding: 10px;
+    text-align: center;
+} */
+footer {
+    display: grid;
+    grid-template-columns: 2.5fr repeat(5, 1fr); /* la primera columna de doble tamaño, luego 5 columnas normales */
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.footer-column.main-column {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+}
+
+.footer-column img {
+    width: 20px;
+    margin: 015px 5px;
+}
+
+.main-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #b4b2b2;
+    color: #333;
+    border: 0px;
+    text-align: center;
+}
+
+.main-button::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #242424;
+    opacity: 0.7;
+}
+
+.main-input {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    background-color: #f5f5f5;
+    color: #4e4d4d;
+    border: 0px;
+    text-align: left;
+}
+
+.main-input::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #f5f5f5;
+    opacity: 0.7;
+}
+
+.footer-column {
+    /* background-color: #dcdcdc; */
+    color: #6b6b6b;
+    padding: 10px;
+    text-align: left;
+}
+
+.footer-column p {
+    font-size: 80%;
+}
+
+.title-footer {
+    font-weight: bold;
+    /* margin-left: 4px; */
+}
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .menu-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .menu-top p {
+        font-size: 80%;
+    }
+
+    .menu-icons {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: 0px;
+    }
+
+    .mobile-menu-button {
+        display: block;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 6px 0;
+    }
+
+    .menu-text {
+        text-align: center;
+        /* Alinear el texto al centro */
+    }
+
+    .menu-logo {
+        margin-bottom: 10px;
+        /* Agregar un margen inferior para separar la imagen */
+    }
+    
+    /* menu */
+    /* Ocultar el menú en la versión móvil */
+    .menu-section ul {
+        display: none;
+        /* Ocultar el menú en la versión móvil */
+    }
+
+    .mobile-menu-button {
+        display: block;
+        /* Mostrar el botón en la versión móvil */
+        margin-right: 20px;
+    }
+
+    .mobile-menu-modal {
+        display: block;
+    }
+
+    .mobile-menu-content {
+        right: 0;
+    }
+
+    /* aqui */
+    img.menu-icon-ship, img.menu-icon-store {
+        display: none;
+    }
+
+    .menu-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo img {
+        margin-right: 0;
+    }
+
+    nav {
+        margin-top: 20px;
+    }
+
+    .huincha {
+        padding: 15px 0;
+    }
+
+    .banner-section {;
+        max-width: 100%;
+        width: 500px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .image-section {
+        display: none;
+        overflow-x: hidden;
+    }
+
+    .product-slider {
+        padding-top: 50px;
+        max-width: 65%; /* 93%;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .product-item {
+        text-align: center;
+    }
+
+    .slider-title {
+        display: block;
+        margin-top:10px;
+        font-size: 75%;
+        text-align: left;
+        text-decoration: underline;
+        margin-left: 12px;
+    }
+
+    .category-item {
+        max-width: 48%;
+    }
+
+    /* footer */
+    .main-input {
+        display: block;
+        width: 95%;
+        padding: 10px;
+        background-color: #d3d3d3;
+        border: 1px solid;
+        border-radius: 5px;
+        color: #4e4d4d;
+        text-align: left;
+    }
+
+    .main-input::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #d3d3d3;
+        opacity: 0.7;
+    }
+ 
+    footer {
+        grid-template-columns: 1fr;
+    }
+
+    .main-column,
+    .footer-column.social-column {
+        width: 100%;
+    }
+
+    .footer-column.mb {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* 2 columnas para los divs del medio */
+        align-items: center;
+        text-align: center;
+        padding: 1px;
+    }
+
+    .footer-column.mb p {
+        width: auto;
+        text-align: center;
+    }
+    
+    .foot-redes {
+        text-align: center;
+    }
+
+}
