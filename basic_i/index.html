@@ -5,8 +5,10 @@
             Se muestra antes del título para garantizar que el navegador pueda renderizar 
             los caracteres de ese título y todos los caracteres del resto del documento.  -->
         <title>Aprendiendo HTML</title> <!-- titulo de la web -->
-        <meta name="viewport" content="width=device-width" /> <!-- yuda a la capacidad de respuesta del sitio y permite que el contenido se renderice correctamente de forma predeterminada -->
-        <link rel="icon" type="image/png" href="https://arturocabrera.com/store/assets/img/logo2.png">
+        <meta name="viewport" content="width=device-width" /> <!-- ayuda a la capacidad de respuesta del sitio y permite que el contenido se renderice correctamente de forma predeterminada -->
+        <link rel="stylesheet" href="css/styles.css"> <!-- importacion de hojas de estilos externos -->
+        <link rel="icon" type="image/png" href="https://arturocabrera.com/store/assets/img/logo2.png"> <!--uso de icon del documento, en caso de no existir el favicon.ico-->
+        <link rel="alternate" href="https://arturocabrera.com/fr/" hreflang="fr-FR" /> <!--versiones alternativas del sitio, para identificar las traducciones-->
         <!-- existen tres maneras de incluir CSS: <style>, link y con el atributo style -->
         <style contenteditable style="display: block; font-family: monospace; white-space: pre;">
             head {
@@ -20,7 +22,11 @@
     </head>
     <body>
         <h1>Aprendiendo HTML</h1>
-        <!--  -->
+        <a href="#atributos" target="_self">Aqui</a>
+
+        <base href="#atributos" target="_self"/>
+
+        <!-- asi se escribe un comentario -->
         <!-- <script>
             document.getElementById('switch').addEventListener('click', function () {
                 document.body.classList.toggle('black');
