@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* One radio button per line */
+        label {
+        display: block;
+        cursor: pointer;
+        line-height: 2.5;
+        }
+
+        /* the basic, unchecked style */
+        input[type="radio"] {
+        appearance: none;
+        display: inline-block;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        border: 0.25em solid #000;
+        }
+
+        [type="radio"]:focus  {
+        background: lightgreen;
+        border-color: white;
+        box-shadow: 0 0 0 3px black;
+        }
+        /* the checked style using the :checked pseudo class */
+        [type="radio"]:checked  {
+        background: blue;
+        border-color: white;
+        box-shadow: 0 0 0 3px black;
+        }
+
+        /* never forget focus styling */
+
+
+        /* Nothing to see here. */
+        body {
+        margin: 3em auto;
+        max-width: 30em;
+        font-family: comic-sans;
+        font-size: 1.5rem;
+        font-family: sans-serif;
+        }
+        li {
+        list-style-type: none;
+        }
+
+        fieldset {
+        border: 2px solid #000;
+        padding: 2em;
+        border-radius: 0.5em;
+        }
+
+        legend {
+        color: #fff;
+        background: #000;
+        padding: 0.25em 1em;
+        border-radius: 1em;
+        }
+    </style>
+</head>
+<body>
+    <form method="GET">
+        <label for="name">Nombre<input type="text" id="name"></label>
+        <label for="lastname">Apellido<input type="text" id="lastname"></label>
+        <select name="data" id="data">
+            <option value="my_name">My Name</option>
+            <option value="my_lastname">My Last Name</option>
+            <option>Age</option>
+        </select>
+        <button>Enviar</button>
+    </form>
+
+    <form method="GET">
+        <label for="student">Pick a student:</label>
+        <select name="student" id="student">
+            <option value="hoover">Hoover Sukhdeep</option>
+            <option>Blendan Smooth</option>
+            <option value="toasty">Toasty McToastface</option>
+        </select>
+        <input type="submit" value="Submit Form">
+    </form>
+
+    <fieldset>
+        <legend>Who is your favorite student?</legend>
+        <ul>
+            <li>
+                <label>
+                    <input type="radio" value="blendan" name="machine" checked> Blendan Smooth
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" value="hoover" name="machine"> Hoover Sukhdeep
+                </label>
+            </li>
+            <li>
+                <label>
+                    <input type="radio" value="toasty" name="machine"> Toasty McToastface
+                </label>
+            </li>
+        </ul>
+    </fieldset>
+    <!-- Si alguna vez observaste que cuando seleccionas un botón dentro de un grupo de botones de selección, 
+        solo se puede elegir uno a la vez, esto se debe al atributo name. Para crear este efecto 
+        de que solo se puede seleccionar uno, se le otorga el mismo name a cada botón de selección de un grupo.
+     -->
+
+     <!-- asociar de forma explicita -->
+    <label for="full_name">Your name</label>
+    <input type="text" id="full_name" name="name">
+
+    <!-- para proporcionar etiquetas implicitas -->
+    <label>Your name
+        <input type="text" name="name">
+    </label>
+
+    <h2>Acceso al microfono y la cámara</h2>
+    <label for="avatar">A recent photo of yourself:</label>
+    <input type="file" capture="user" accept="image/*" name="avatar" id="avatar">
+
+</body>
+</html>
