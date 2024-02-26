@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template, Slot and shadow</title>
+    <style>
+        rating {
+            display: inline-flex;
+        } 
+        /* ocultar visualmente la radio actual */
+        input[type=radio]{ 
+            appearance: none;
+            margin: 0;
+            box-shadow: none; /* remove shadow on invalid submit */
+        }
+
+        /* El contenido generado es compatible con la entrada. */
+        input[type=radio]::after {
+            content: '\2605';
+            font-size: 32px;
+        }
+
+        /* De forma predeterminada, si no se selecciona ningún valor, todas las estrellas son grises. */
+        input[type=radio]:invalid::after {
+            color: #ddd;
+        }
+
+        /* Si la calificación está enfocada o está suspendida, oscurece todas las estrellas. */
+        rating:hover input[type=radio]:invalid::after,
+        rating:focus-within input[type=radio]:invalid::after
+        {color: #888;}
+
+        /* hace que todas las estrellas después de la enfocada se pongan de color gris claro, hasta que se seleccione un valor */
+        rating:hover input[type=radio]:hover ~ input[type=radio]:invalid::after,
+        rating input[type=radio]:focus ~ input[type=radio]:invalid::after  {color: #ddd;}
+
+
+        /* si se selecciona un valor, haz que todos estén seleccionados */
+        rating input[type=radio]:valid {
+            color: orange;
+        }
+        /* luego haga que los que vienen después del valor seleccionado parezcan inactivos*/
+        rating input[type=radio]:checked ~ input[type=radio]:not(:checked)::after{
+            color: #ccc;
+            content: '\2606'; /* optional. hollow star */
+        }
+    </style>
+</head>
+<body>
+    <template id="star-rating-template">
+        <form>
+            <fieldset>
+                <legend>Rate your experience:</legend>
+                <rating>
+                    <input type="radio" name="rating" value="1" aria-label="1 star" required />
+                    <input type="radio" name="rating" value="2" aria-label="2 stars" />
+                    <input type="radio" name="rating" value="3" aria-label="3 stars" />
+                    <input type="radio" name="rating" value="4" aria-label="4 stars" />
+                    <input type="radio" name="rating" value="5" aria-label="5 stars" />
+                </rating>
+            </fieldset>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+    </template>
+    <!-- 
+        Como el contenido de un elemento <template> no se escribe en la pantalla, 
+        no se renderiza el <form> ni su contenido. Sí, este está en blanco, pero si inspeccionas la pestaña HTML, 
+        verás el lenguaje de marcado <template>.
+     -->
+
+
+    <template id="star-rating-template">
+        <form>
+            <fieldset>
+                <legend>Rate your experience:</legend>
+                <rating>
+                    <input type="radio" name="rating" value="1" aria-label="1 star" required />
+                    <input type="radio" name="rating" value="2" aria-label="2 stars" />
+                    <input type="radio" name="rating" value="3" aria-label="3 stars" />
+                    <input type="radio" name="rating" value="4" aria-label="4 stars" />
+                    <input type="radio" name="rating" value="5" aria-label="5 stars" />
+                </rating>
+            </fieldset>
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+        </form>
+    </template>
+    <div id="foo"></div>
+    <div id="bar"></div>
+
+
+    <script>
+        let starRating = document.getElementById("star-rating-template").content;
+        document.body.appendChild(starRating);
+    </script>
+</body>
+</html>
