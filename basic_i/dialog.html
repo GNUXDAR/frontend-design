@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialog</title>
+    <style>
+        body {
+            background: #a4bacc99;
+            color: #226daa;
+            font-family: Raleway, sans-serif;
+            accent-color: #226DAA;
+        }
+        a:hover, a:focus {
+         text-underline-offset: 0.25em;
+        }
+        [aria-label="close"] {
+            appearance: none;
+            float: right;
+            border: 1px solid;
+            border-radius: 50%;
+        }
+        dialog :focus {
+            outline: 2px solid #226DAA;
+        }
+    </style>
+</head>
+<body>
+    <dialog id="dialog">
+        <form>
+            <button type="submit" aria-label="close" formmethod="dialog" formnovalidate>X</button>
+            <h2 id="dialogid">MLW Registration</h2>
+            <p>All fields are required</p>
+            <p>
+                <label>Name:
+                    <input type="text" name="name" required />
+                </label>
+            </p>
+            <p>
+                <label>Warranty:
+                    <input type="number" min="0" max="10" step=”1” name="warranty" required />
+                </label>
+            </p>
+            <p>
+                <label>Power source:
+                    <select name="powersoure">
+                        <option>AC/DC</option>
+                        <option>Battery</option>
+                        <option>Solar</option>
+                    </select>
+                </label>
+            </p>
+            <p>
+                <button type="submit" formmethod="post">Submit</button>
+            </p>
+            <hr />
+            <p>Additional buttons</p>
+            <button id="jsbutton">JS close</button>
+            <button id="reset" type="reset">Reset</button>
+            </p>
+        </form>
+    </dialog>
+    
+    <button id="modal">Open Modal dialog</button>
+    <p id="text"></p>
+    <hr />
+    <h2>Random interactive elements</h2>
+    <p>Before opening the dialog, tab thru these interactive elements. Then try again when the dialog is open.</p>
+    <p>When the dialog is open, are any of these normally interactive elements interactive?</p>
+    <p><a href="https://machinelearningworkshop.com">Machine Learning Workshop</a></p>
+    <p><label>Here is a useless input: <input></label></p>
+    <p>
+        <label>Here is a useless select:
+            <select name="yummy">
+                <option>Maple Syrup</option>
+                <option>Ice Cream</option>
+                <option>Bacon</option>
+            </select>
+        </label>
+    </p>
+
+    <hr>
+
+    <!-- Simple pop-up dialog box, containing a form of mdn mozilla -->
+    <dialog id="favDialog">
+        <form method="dialog">
+            <button id="close" aria-label="close" formnovalidate>X</button>
+            <section>
+                <p>
+                    <label for="favAnimal">Favorite animal:</label>
+                    <select id="favAnimal" name="favAnimal">
+                        <option></option>
+                        <option>Brine shrimp</option>
+                        <option>Red panda</option>
+                        <option>Spider monkey</option>
+                    </select>
+                </p>
+            </section>
+            <menu>
+                <button type="reset">Reset</button>
+                <button type="submit">Confirm</button>
+            </menu>
+        </form>
+    </dialog>
+    
+    <menu>
+        <button id="updateDetails">Update details</button>
+    </menu>
+
+    <hr>
+
+    <!-- Diálogos no modales -->
+    <dialog id="dialog2" open>
+        <form>
+            <button type="submit" aria-label="close" formmethod="dialog" formnovalidate>X</button>
+        </form>
+        <h2 id="dialogid">Bad user Experience</h2>
+        <p>When you opened the dialog, not that focus was added to the X. What would happen if there ws nothing interactive
+            in the dialog?</p>
+        <ol>
+            <li>Try closing this dialog using <kbd>Esc</kbd>. Does it work?</li>
+            <li>Close this modal with a form submission (the X): if the formmethod is set to `dialog`, the dialog will
+                close. (open the dialog up again after you try it.)</li>
+            <li>Activate the "close the dialog" button. Where does focus go?</li>
+    
+        </ol>
+        <p>If these two buttons weren't included, how could the user close the dialog?</p>
+        </form>
+    </dialog>
+    
+    <button id="modalless">Open modalless dialog</button>
+    <p id="text"></p>
+    <hr />
+    <h2>Random interactive elements</h2>
+    <p>Before opening the dialog, tab thru these interactive elements. Then try again when the dialog is open.</p>
+    <p>When the dialog is open, because the dialog was opened with <code>show()</code> it is non-modal. Are these normally
+        interactive elements interactive? They should be.</p>
+    <p><a href="https://machinelearningworkshop.com">Machine Learning Workshop</a></p>
+    <p><label>Here is a useless input: <input></label></p>
+    <p>
+        <label>Here is a useless select:
+            <select name="yummy">
+                <option>Maple Syrup</option>
+                <option>Ice Cream</option>
+                <option>Bacon</option>
+            </select>
+        </label>
+    </p>
+    <button id="closeIt">close the dialog</button>
+
+    <script>
+        const dialog = document.getElementById('dialog');
+        const dialog2 = document.getElementById('dialog2');
+        const text = document.getElementById('text');
+        const jsbutton = document.getElementById('jsbutton');
+        const modal = document.getElementById('modal');
+        const modalless = document.getElementById('modalless'); //no modal
+        const reset = document.getElementById('reset');
+
+        // no modal
+        modalless.addEventListener('click', (event) => {
+                dialog2.show();
+                text.textContent = '';
+            });
+        // end no modal
+
+        modal.addEventListener('click', (event) => {
+            dialog.showModal();
+            text.textContent = '';
+        });
+
+        jsbutton.addEventListener('click', (event) => {
+            dialog.close();
+            text.innerHTML += '"JS close" closed the dialog.<br/>';
+        });
+
+
+        dialog.addEventListener('cancel', (event) => {
+            text.innerHTML += 'cance event happened<br/>';
+        });
+
+        dialog.addEventListener('close', (event) => {
+            text.innerHTML += 'close event happened<br/>';
+        });
+    </script>
+
+    <script>
+        // mdn mozilla
+        (() => {
+            const updateButton = document.getElementById("updateDetails");
+            const closeButton = document.getElementById("close");
+            const dialog = document.getElementById("favDialog");
+            dialog.returnValue = "favAnimal";
+
+            function openCheck(dialog) {
+                if (dialog.open) {
+                    console.log("Dialog open");
+                } else {
+                    console.log("Dialog closed");
+                }
+            }
+
+            // Update button opens a modal dialog
+            updateButton.addEventListener("click", () => {
+                dialog.showModal();
+                openCheck(dialog);
+            });
+
+            // Form close button closes the dialog box
+            closeButton.addEventListener("click", () => {
+                dialog.close("animalNotChosen");
+                openCheck(dialog);
+            });
+        })();
+    </script>
+</body>
+</html>
