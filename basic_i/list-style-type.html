@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <title>Listas en HTML</title>
+        <meta name="viewport" content="width=device-width">
+        <meta name="description" content="Listas en HTML">
+
+        <style>
+            .style-type ol {
+                    font-size: 1.2rem;
+                    min-height: 5rem;
+                }
+            .style-type ul {
+                    list-style-type: none;
+                    columns: 8 12rem;
+                }
+        </style>
+    </head>
+    <body>
+        <h1>Listas</h1>
+
+        <h3>propiedad <code>style="list-style-type: cjk-ideographic"</code></h3>
+        <div class="style-type">
+            <ol type="i">
+                <li>Blender</li>
+                <li>Toaster</li>
+                <li>Vaccuum</li>
+            </ol>
+
+            <fieldset>
+                <legend> Select a numeric type for <code>list-style-type</code></legend>
+                <ul>
+                    <li>
+                        <label for="decimal">
+                            <input type="radio" id="decimal" name="type" value="decimal" />decimal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="cjk-decimal">
+                            <input type="radio" id="cjk-decimal" name="type" value="cjk-decimal" />cjk-decimal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="decimal-leading-zero">
+                            <input type="radio" id="decimal-leading-zero" name="type"
+                                value="decimal-leading-zero" />decimal-leading-zero
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="lower-roman">
+                            <input type="radio" id="lower-roman" name="type" value="lower-roman" />lower-roman
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="upper-roman">
+                            <input type="radio" id="upper-roman" name="type" value="upper-roman" />upper-roman
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="lower-greek">
+                            <input type="radio" id="lower-greek" name="type" value="lower-greek" />lower-greek
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="lower-alpha">
+                            <input type="radio" id="lower-alpha" name="type" value="lower-alpha" />lower-alpha, lower-latin
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="upper-alpha">
+                            <input type="radio" id="upper-alpha" name="type" value="upper-alpha" />upper-alpha, upper-latin
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="arabic-indic">
+                            <input type="radio" id="arabic-indic" name="type" value="arabic-indic" />arabic-indic
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="armenian">
+                            <input type="radio" id="armenian" name="type" value="armenian" />armenian
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="bengali">
+                            <input type="radio" id="bengali" name="type" value="bengali" />bengali
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="cambodian">
+                            <input type="radio" id="cambodian" name="type" value="cambodian" />cambodian
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="cjk-earthly-branch">
+                            <input type="radio" id="cjk-earthly-branch" name="type" value="cjk-earthly-branch" />cjk-earthly-branch
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="cjk-heavenly-stem">
+                            <input type="radio" id="cjk-heavenly-stem" name="type" value="cjk-heavenly-stem" />cjk-heavenly-stem
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="cjk-ideographic">
+                            <input type="radio" id="cjk-ideographic" name="type" value="cjk-ideographic" />cjk-ideographic
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="devanagari">
+                            <input type="radio" id="devanagari" name="type" value="devanagari" />devanagari
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="ethiopic-numeric">
+                            <input type="radio" id="ethiopic-numeric" name="type" value="ethiopic-numeric" />ethiopic-numeric
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="georgian">
+                            <input type="radio" id="georgian" name="type" value="georgian" />georgian
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="gujarati">
+                            <input type="radio" id="gujarati" name="type" value="gujarati" />gujarati
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="gurmukhi">
+                            <input type="radio" id="gurmukhi" name="type" value="gurmukhi" />gurmukhi
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="hebrew">
+                            <input type="radio" id="hebrew" name="type" value="hebrew" />hebrew
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="hiragana">
+                            <input type="radio" id="hiragana" name="type" value="hiragana" />hiragana
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="hiragana-iroha">
+                            <input type="radio" id="hiragana-iroha" name="type" value="hiragana-iroha" />hiragana-iroha
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="japanese-formal">
+                            <input type="radio" id="japanese-formal" name="type" value="japanese-formal" />japanese-formal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="japanese-informal">
+                            <input type="radio" id="japanese-informal" name="type" value="japanese-informal" />japanese-informal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="kannada">
+                            <input type="radio" id="kannada" name="type" value="kannada" />kannada
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="katakana">
+                            <input type="radio" id="katakana" name="type" value="katakana" />katakana
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="katakana-iroha">
+                            <input type="radio" id="katakana-iroha" name="type" value="katakana-iroha" />katakana-iroha
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="khmer">
+                            <input type="radio" id="khmer" name="type" value="khmer" />khmer
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="korean-hangul-formal">
+                            <input type="radio" id="korean-hangul-formal" name="type"
+                                value="korean-hangul-formal" />korean-hangul-formal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="korean-hanja-formal">
+                            <input type="radio" id="korean-hanja-formal" name="type"
+                                value="korean-hanja-formal" />korean-hanja-formal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="korean-hanja-informal">
+                            <input type="radio" id="korean-hanja-informal" name="type"
+                                value="korean-hanja-informal" />korean-hanja-informal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="lao">
+                            <input type="radio" id="lao" name="type" value="lao" />lao
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="lower-armenian">
+                            <input type="radio" id="lower-armenian" name="type" value="lower-armenian" />lower-armenian
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="malayalam">
+                            <input type="radio" id="malayalam" name="type" value="malayalam" />malayalam
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="mongolian">
+                            <input type="radio" id="mongolian" name="type" value="mongolian" />mongolian
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="myanmar">
+                            <input type="radio" id="myanmar" name="type" value="myanmar" />myanmar
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="oriya">
+                            <input type="radio" id="oriya" name="type" value="oriya" />oriya
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="persian">
+                            <input type="radio" id="persian" name="type" value="persian" />persian
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="simp-chinese-formal">
+                            <input type="radio" id="simp-chinese-formal" name="type"
+                                value="simp-chinese-formal" />simp-chinese-formal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="simp-chinese-informal">
+                            <input type="radio" id="simp-chinese-informal" name="type"
+                                value="simp-chinese-informal" />simp-chinese-informal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="tamil">
+                            <input type="radio" id="tamil" name="type" value="tamil" />tamil
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="telugu">
+                            <input type="radio" id="telugu" name="type" value="telugu" />telugu
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="thai">
+                            <input type="radio" id="thai" name="type" value="thai" />thai
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="tibetan">
+                            <input type="radio" id="tibetan" name="type" value="tibetan" />tibetan
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="trad-chinese-formal">
+                            <input type="radio" id="trad-chinese-formal" name="type"
+                                value="trad-chinese-formal" />trad-chinese-formal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="trad-chinese-informal">
+                            <input type="radio" id="trad-chinese-informal" name="type"
+                                value="trad-chinese-informal" />trad-chinese-informal
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="upper-armenian">
+                            <input type="radio" id="upper-armenian" name="type" value="upper-armenian" />upper-armenian
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="disclosure-open">
+                            <input type="radio" id="disclosure-open" name="type" value="disclosure-open" />disclosure-open
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="disclosure-closed">
+                            <input type="radio" id="disclosure-closed" name="type" value="disclosure-closed" />disclosure-closed
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="ethiopic-halehame-ti-er">
+                            <input type="radio" id="ethiopic-halehame-ti-er" name="type"
+                                value="ethiopic-halehame-ti-er" />ethiopic-halehame-ti-er
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="ethiopic-halehame-ti-et">
+                            <input type="radio" id="ethiopic-halehame-ti-et" name="type"
+                                value="ethiopic-halehame-ti-et" />ethiopic-halehame-ti-et
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="hangul">
+                            <input type="radio" id="hangul" name="type" value="hangul" />hangul
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="hangul-consonant">
+                            <input type="radio" id="hangul-consonant" name="type" value="hangul-consonant" />hangul-consonant
+                        </label>
+                    </li>
+
+                    <li>
+                        <label for="urdu">
+                            <input type="radio" id="urdu" name="type" value="urdu" />urdu
+                        </label>
+                    </li>
+
+                </ul>
+            </fieldset>
+        </div>
+        <script>
+            const type = document.querySelector("ul");
+                type.addEventListener("change", (event) => {
+                    const example = document.querySelector("ol");
+                    example.setAttribute("style", `list-style-type: ${event.target.value}`);
+                });
+        </script>
+    </body>
+</html>
