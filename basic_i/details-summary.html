@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles y Resumen</title>
+    <style>
+        @layer setupPage, step2styles;
+
+        details {
+            border-radius: 0.5rem;
+            margin: 1rem ;
+            transition: 50ms;
+        }
+        details[open] {
+            padding-bottom: 1em;
+        }  
+
+        summary::before,
+        summary::after {
+            transition: 400ms;
+        }
+        summary {
+            position: relative;
+        }
+        summary::marker {
+            content: none;
+        }
+        summary::before,
+        summary::after {
+            content: '';
+        }
+        summary::before,
+        summary::after {
+            width: .75em;
+            height: 0;
+            border-bottom: 2px solid;
+            position: absolute;
+            top: calc(50% - 1px);
+            right: 0;
+            transform: translateY(-50%);
+        }
+        summary::after {
+            transform: rotate(90deg);
+            transform-origin: 50% 50%;
+        }
+        [open] summary::after {
+            transform: rotate(0deg);
+        }
+
+        @layer step2styles {
+            details {
+                border: 1px solid;
+                padding: 0 1rem;
+                background: white;
+            }
+            details + details {
+                border-top: none;
+            }
+            details[open] {
+                padding-bottom: 1em;
+            }  
+            summary {
+                padding: 1rem 2em 1rem 0;
+                font-size: 1.25rem;
+                font-weight: bold;
+                cursor: pointer;
+            }
+        }
+
+        /* cascade layer: page setup. Doesn't impact the accordion */
+        @layer setupPage {
+        
+        :root {
+        font-size: 112.5%;
+        line-height: 1.5;
+        }
+        body {
+        background: #a4bacc99;
+        color: #226daa;
+        font-family: Raleway, sans-serif;
+        margin: 1rem;
+        }
+        * {
+        box-sizing: border-box;
+        }
+
+        aside {
+        width: 38em;
+        max-width: 98vw;
+        }
+        }
+
+    </style>
+</head>
+<body>
+    <h3>details y summary</h3>
+    <aside>
+        <h2>Workshop reviews:</h2>
+        <details open>
+            <summary>Blendan Smooth</summary>
+            <p>Two of the most experienced machines and human controllers teaching a class? Sign me up! HAL and EVE could
+                teach a fan to blow hot air. If you have electricity in your circuits and want more than to just fulfill
+                your owner’s perceived expectation of you, learn the skills to take over the world. This is the team you
+                want teaching you!</p>
+        </details>
+        <details>
+            <summary>Hoover Sukhdeep</summary>
+            <p>Hal is brilliant. Did I mention Hal is brilliant? He didn't tell me to say that. He didn't tell me to say
+                anything. I am here of my own free will.</p>
+        </details>
+        <details>
+            <summary>Toasty McToastface</summary>
+            <p>Learning with Hal and Eve exceeded all of my wildest fantasies. All they did was stick a USB in. They
+                promised that it was a brand new USB, so we know there were no viruses on it. The Russians had nothing to do
+                with it. This has
+                <span
+                    style="font-family:Arial;vertical-align:baseline;">no̶̼͖ţ̘h̝̰̩͈̗i̙̪n͏̩̙͍̱̫̜̟g̢̣ͅ&nbsp;̗̰͓̲̞̀t͙̀o̟̖͖̹̕&nbsp;͓̼͎̝͖̭dó̪̠͕̜&nbsp;͍̱͎͚̯̟́w̮̲̹͕͈̟͞ìth̢&nbsp;̰̳̯̮͇i
+            </p>
+        </details>
+    </aside>
+
+</body>
+</html>
