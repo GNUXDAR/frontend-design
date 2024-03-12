@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herencia</title>
+    <style>
+        .my-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            background: pink;
+            font: inherit;
+            text-align: center;
+        }
+
+        article a {
+            color: maroon;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://example.com" class="my-button">I am a button link</a>
+
+    <main>
+    <div class="wrapper">
+        <div class="flow">
+        <a href="#" class="my-button">A link that looks like a button</a>
+        <article class="flow">
+            <p>
+            Here is some content in an article. The <a href="#">link style</a> of the button will
+            inherit from this article’s CSS.
+            </p>
+            <p><a href="#" class="my-button">A link that looks like a button</a></p>
+        </article>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
