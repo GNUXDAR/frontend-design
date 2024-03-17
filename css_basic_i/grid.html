@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 5em 100px 30%;
+            grid-template-rows: 200px auto;
+            gap: 10px;
+        }
+        .item {
+            border:solid;
+        }
+
+        /* repeat, auto-fill */
+        :root {
+            --var-col: 1fr;
+        }
+
+        .container2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 200px);
+            gap: 10px;
+            background-color: var(--color-stroke);
+            padding: 1em;
+            max-width: 70rem;
+        }
+
+        select {
+            min-width: unset;
+        }
+
+        .box {
+            border:solid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">element1</div>
+        <div class="item">element2</div>
+        <div class="item">element3</div>
+    </div>
+
+    <h2>ejemplo con minmax() y repeat()</h2>
+<main>
+    <div class="wrapper">
+        <article class="flow">
+            <h1>Repeating fixed size tracks</h1>
+
+            <div class="container2" id="container">
+                <div class="box">Item one</div>
+                <div class="box">Item two</div>
+                <div class="box">Item three</div>
+                <div class="box">Item four</div>
+                <div class="box">Item five</div>
+                <div class="box">Item six</div>
+                <div class="box">Item seven</div>
+                <div class="box">Item eight</div>
+            </div>
+        </article>
+    </div>
+</main>
+</body>
+</html>
