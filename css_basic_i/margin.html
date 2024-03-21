@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Margin</title>
+    <style>
+        .all-sides {
+            margin: 20px;
+        }
+
+        .two-sides {
+            margin: 20px 40px;
+        }
+
+        .three-sides {
+            margin: 20px 40px 30px;
+        }
+
+        .four-sides {
+            margin: 20px 40px 30px 10px;
+        }
+
+        /* presentational styles */
+
+        .container {
+            margin: 10px;
+            max-width: 400px;
+            background: #96d0ff;
+            border: 1px solid;
+        }
+
+        .container > * {
+            border: 1px solid;
+            background: white;
+            padding: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+    <main>
+        <div class="wrapper">
+            <article class="flow">
+                <h1>Margin shorthand</h1>
+                <figure class="callout">
+                    <p>
+                        If you only define one value for <code>margin</code>, it’ll apply margin to
+                        all sides. If you define two values for <code>margin</code>, the first value
+                        will be applied to the top and bottom (block) sides and the second value
+                        will be applied to the left and right (inline) sides. If you define three
+                        values for <code>margin</code>, the first value is <code>top</code>, the
+                        second value is <code>left</code> <strong>and</strong>
+                        <code>right</code> and the third value is <code>bottom</code>.
+                    </p>
+                </figure>
+                <div class="container">
+                    <div class="all-sides">I have <code>margin: 20px;</code>.</div>
+                </div>
+                <div class="container">
+                    <div class="two-sides">I have <code>margin: 20px 40px;</code>.</div>
+                </div>
+                <div class="container">
+                    <div class="three-sides">I have <code>margin: 20px 40px 30px;</code>.</div>
+                </div>
+                <div class="container">
+                    <div class="four-sides">I have <code>margin: 20px 40px 30px 10px;</code>.</div>
+                </div>
+            </article>
+        </div>
+    </main>
+</body>
+</html>
