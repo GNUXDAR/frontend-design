@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoelements</title>
+    <style>
+        p:first-of-type::first-letter {
+            color: #0c55ff;
+            float: left;
+            font-size: 2.6em;
+            font-weight: bold;
+            line-height: 1;
+            margin-inline-end: 0.2rem;
+        }
+
+        article {
+            display: flow-root;
+        }
+
+        article>*+* {
+            margin-top: 1em;
+        }
+
+        h1 {
+            font-weight: bold;
+            max-width: 22ch;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <h1>Pseudoelementos</h1>
+        <h2>::first-letter</h2>
+        <p>
+            Si tienes un artículo de contenido y quieres que la primera letra sea mucho más grande, ¿cómo lo logras?
+            En CSS, puedes usar el seudoelemento <code>::first-letter</code> para lograr este tipo de detalles de
+            diseño.
+        </p>
+        <pre>
+            <code>
+                p::first-letter {
+                color: blue;
+                float: left;
+                font-size: 2.6em;
+                font-weight: bold;
+                line-height: 1;
+                margin-inline-end: 0.2rem;
+                }
+            </code>
+        </pre>
+
+        <h2>::before y ::after</h2>
+        <p>Los pseudo-elementos ::before y ::after en CSS permiten insertar contenido adicional antes o después del contenido real
+        de un elemento, respectivamente. Estos pseudo-elementos son útiles para agregar contenido decorativo o funcionalidad
+        adicional a los elementos HTML sin necesidad de modificar el contenido HTML directamente.</p>
+
+
+    </article>
+</body>
+
+</html>
