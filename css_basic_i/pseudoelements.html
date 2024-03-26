@@ -121,6 +121,31 @@
         details[open] summary::marker {
             content: '\2212'' '; /* Minus symbol with space */
         }
+
+        /* ::selection */
+        ::selection {
+            background-color: #ffcc00;
+            color:#00ffdd;
+        }
+
+        /* ::placeholder */
+        ::placeholder {
+            color: #007bff;
+            font-size: 0.6em;
+        }
+
+        /* ::cue */
+        video::cue {
+            color: yellow;
+        }
+
+        video::cue(b) {
+            color: red;
+        }
+
+        video::cue(i) {
+            color: lightpink;
+        }
     </style>
 </head>
 
@@ -215,7 +240,30 @@
             <li>option</li>
             <li>option</li>
         </ol>
+    
+    <h2>::selection</h2>
+    <p>
+        En CSS se utiliza para aplicar estilos al texto que ha sido seleccionado por el usuario en la página web. Esto incluye
+        cualquier texto que el usuario haya resaltado con el cursor del mouse o seleccionado utilizando métodos de selección de
+        texto.
+    </p>
+    
+    <h2>::placeholder</h2>
+    <p>
+        El pseudo-elemento ::placeholder en CSS se utiliza para aplicar estilos al texto del marcador de posición (placeholder)
+        dentro de un elemento de entrada (input o textarea). El marcador de posición es el texto que se muestra dentro del campo de entrada 
+        cuando está vacío y desaparece una vez que el usuario comienza a escribir.
+        <input type="text" placeholder="Ingrese su Nombre">
+    </p>
 
+    <h2>::cue</h2>
+    <p>
+        El último de este recorrido por los seudoelementos es el ::cue. Esto te permite definir el estilo de las indicaciones de
+        WebVTT, que son las leyendas de un elemento video.
+        
+        También puedes pasar un selector a una ::cue, lo que te permite aplicar diseño a elementos específicos dentro de una
+        leyenda.
+    </p>
 
     <br>
     <a href="#">Up</a>
