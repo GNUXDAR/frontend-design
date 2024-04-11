@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <style>
+        :root {
+            --base-color: lightblue; 
+        }
+
+        .my-element {
+            background: var(--base-color, hotpink);
+        }
+
+
+        /* Presentational styles */
+        p {
+            font-weight: bold;
+            padding: 1em;
+            max-width: 300px;
+            border: 1px solid;
+        }
+
+        code {
+            font-weight: normal;
+        }
+
+        /* a */
+        a::after {
+            content: attr(href);
+        }
+
+        .my-element {
+            background-image: url('img/html.webp');
+        }
+    </style>
+</head>
+<body>
+    <p class="my-element">If <code>--base-color</code> is not defined, I will have a <code>hotpink</code> background</p>
+
+    <a href="#" class="my-element">image</a>
+</body>
+</html>
