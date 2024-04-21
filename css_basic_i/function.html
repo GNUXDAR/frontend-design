@@ -7,6 +7,7 @@
     <style>
         :root {
             --base-color: lightblue; 
+            /* comentar, para emular que no  */
         }
 
         .my-element {
@@ -34,11 +35,148 @@
         .my-element {
             background-image: url('img/html.webp');
         }
+
+        /* transformaciones */
+        .boxes {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .boxes > * {
+            padding: 3em 1.5em;
+            text-align: center;
+            background: var(--base-color);
+            border: 1px solid var(--color-primary);
+            border: solid 1px;
+        }
+
+        label {
+            display: block;
+            width: max-content;
+        }
+
     </style>
 </head>
 <body>
     <p class="my-element">If <code>--base-color</code> is not defined, I will have a <code>hotpink</code> background</p>
 
     <a href="#" class="my-element">image</a>
+
+    <h2>Propiedades personalizadas y var()</h2>
+    <p>
+        Una propiedad personalizada es una variable que te permite asignar valores de token a los valores de tu código CSS. Las
+        propiedades personalizadas también se ven afectadas por la cascada, lo que significa que se pueden manipular o redefinir
+        de forma contextual. Una propiedad personalizada debe tener un prefijo con dos guiones (--) y distingue mayúsculas de
+        minúsculas.
+    </p>
+    <p>        
+        La función var() toma un argumento obligatorio: la propiedad personalizada que intentas mostrar como un valor. En el
+        fragmento anterior, la función var() tiene --base-color pasado como argumento. Si se definió --base-color, var()
+        mostrará el valor.
+    </p>
+    <p>
+        También puedes pasar un valor de declaración de resguardo a la función var(). Esto significa que, si no se puede
+        encontrar --base-color, se usará la declaración pasada, que, en el caso de este ejemplo, es el color hotpink.
+    </p>
+
+    <h2>
+        Funciones que devuelven un valor
+    </h2>
+    <p>
+        La función var() es solo una de las funciones de CSS que devuelve un valor. Las funciones como attr() y url() siguen una
+        estructura similar a var(): pasas uno o más argumentos y los usas en el lado derecho de tu declaración de CSS.
+    </p>
+
+    <h2>Funciones de color</h2>
+    <p>
+        Algunas funciones de color disponibles en CSS son rgb(), rgba(), hsl(), hsla(), hwb(), lab() y lch(). Todos ellos tienen
+        un formato similar, es decir, se pasan argumentos de configuración y se devuelve un color.
+    </p>
+
+    <h2>
+        Expresiones matemáticas
+    </h2>
+    <p>
+        Al igual que muchos otros lenguajes de programación, CSS proporciona funciones matemáticas útiles para ayudar con varios
+        tipos de cálculos.
+    </p>    
+    <strong>calc()</strong>
+    <p>
+        La función calc() toma una sola expresión matemática como parámetro. Esta expresión matemática puede ser una combinación
+        de tipos, como longitud, número, ángulo y frecuencia. Las unidades también se pueden combinar.
+
+    </p>
+    <p>La función calc() se puede anidar dentro de otra función calc(). También puedes pasar propiedades personalizadas en una
+    función var() como parte de una expresión.
+    
+    min() y max()</p>
+
+    <h3>clamp()</h3>
+    <p>La función clamp() toma tres argumentos: el tamaño mínimo, el ideal y el máximo.</p>
+    <code>
+        h1 {
+        font-size: clamp(2rem, 1rem + 3vw, 3rem);
+        }
+    </code>
+    <p>En este ejemplo, font-size será fluido según el ancho del viewport. La unidad vw se agrega a una unidad rem para ayudar
+    con el zoom de la pantalla, ya que, independientemente del nivel de zoom, una unidad vw tendrá el mismo tamaño. La
+    multiplicación por una unidad rem, según el tamaño de la fuente raíz, proporciona la función clamp() con un punto de
+    cálculo relativo.</p>
+
+    <h2>Transformaciones</h2>
+    <p>
+        Por último, en esta descripción general de las funciones CSS, están las funciones de transformación, que sesgan, cambian
+        el tamaño y hasta cambian la profundidad de un elemento. Las siguientes funciones se usan con la propiedad transform.
+    </p>
+
+
+    <main>
+        <div class="wrapper">
+            <article class="flow">
+                <h1>The rotate functions</h1>
+                <figure class="callout">
+                    <p>
+                        Use the slider to see how each of the rotate functions affect the boxes.
+                    </p>
+                </figure>
+                <label>
+                    Rotate the boxes
+                    <input type="range" min="0" max="360" value="0" />
+                </label>
+                <div class="boxes">
+                    <div data-transform="x"><code>rotateX()</code></div>
+                    <div data-transform="y"><code>rotateY()</code></div>
+                    <div data-transform="z"><code>rotateZ()</code></div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <h2>Escalabilidad</h2>
+    <p>
+        Puedes cambiar el escalamiento de un elemento con transform y la función scale(). La función acepta uno o dos números
+        como valor que determinan un escalamiento positivo o negativo. Si solo defines un argumento numérico, tanto el eje X
+        como el eje Y se escalarán de la misma manera y definir ambos es una abreviatura de X e Y. Al igual que rotate(), hay
+        funciones scaleX(), scaleY() y scaleZ() para escalar un elemento en un eje específico.
+    </p>
+
+
+    <script>
+        const boxes = document.querySelectorAll('[data-transform]');
+            const slider = document.querySelector('input[type="range"]');
+
+            slider.addEventListener('input', () => {
+                boxes.forEach(box => {
+                    box.setAttribute(
+                        'style',
+                        `transform: rotate${box.getAttribute('data-transform').toUpperCase()}(${slider.value
+                        }deg)`
+                    );
+                });
+            });
+
+
+    </script>
 </body>
 </html>
