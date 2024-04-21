@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores</title>
+
+    <style>
+        /* selectores */
+        /* article p:first-of-type {
+            color: red;
+            font-size: 1.5em;
+        } */
+
+        /* pseudoclases */
+        /* a:hover {
+            color: red;
+            outline: 1px dotted green;
+        }
+
+        input:focus {
+            border: 2px solid blue;
+        } */
+
+        /* selectores compuestos */
+        .destacado p {
+            color: red;
+        }
+
+        #encabezado .logo{
+            color: blue;
+        }
+
+        .enlace:hover {
+            color: yellow;
+            text-decoration: none;
+        }
+
+        a[href^="https"]::after {
+            content: "https://arturocabrera.com";
+            color: rgba(216, 28, 237, 0.995);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <article>
+        <!-- <p>I want to be red and larger than the other text.</p>
+        <p>I want to be normal sized and the default color.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Sit officiis accusantium quis eveniet porro commodi dignissimos alias. 
+            Ullam maxime provident sed optio reiciendis itaque iste voluptates 
+            <a href="">vitae</a> , facere consequatur autem?</p> -->
+
+            <header id="encabezado">
+                <div class="logo">
+                    Aqui LOGO
+                </div>
+            </header>
+            <div class="destacado">
+                <p>Lorem ipsum, <a href="" class="enlace">dolor</a> sit amet consectetur adipisicing elit. Omnis quae architecto voluptates repudiandae quod! Culpa sit quo deserunt tempora, perferendis dolor nemo facere ea rerum similique officiis ab eum iure?</p>
+                <p>Aqui otro</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur eos nobis architecto nemo ipsa? Quibusdam aperiam molestiae magni quae, eos tempore modi <a href="https://arturocabrera.com">porro</a> temporibus velit <a href="http://google.com">dolores</a> sequi in atque a.</p>
+                <div>
+                    aqui algo
+                </div>
+            </div>
+    </article>
+</body>
+</html>

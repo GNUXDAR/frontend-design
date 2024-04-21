@@ -1,0 +1,24 @@
+<dialog id="miDialogo">
+    <h2>Este es un cuadro de diálogo</h2>
+    <p>Contenido del cuadro de diálogo...</p>
+    <button id="cerrarDialogo">Cerrar</button>
+</dialog>
+
+<button id="abrirDialogo">Abrir cuadro de diálogo</button>
+
+<script>
+    // Obtener el elemento de diálogo y los botones
+    var dialogo = document.getElementById("miDialogo");
+    var abrirBoton = document.getElementById("abrirDialogo");
+    var cerrarBoton = document.getElementById("cerrarDialogo");
+
+    // Agregar evento de clic para abrir el diálogo
+    abrirBoton.addEventListener("click", function () {
+        dialogo.showModal(); // Mostrar el diálogo
+    });
+
+    // Agregar evento de clic para cerrar el diálogo
+    cerrarBoton.addEventListener("click", function () {
+        dialogo.close(); // Cerrar el diálogo
+    });
+</script>

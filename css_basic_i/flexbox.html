@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        .my-element {
+            display: flex;
+            flex-direction: row-reverse;
+        }
+        .box {
+            border: solid 1px;
+            margin-left: 5px;
+            padding: 9px;
+        }
+
+        .container {
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <main class="wrapper">
+        <div class="my-element">
+            <div class="box">I am sat next to a sibling element</div>
+            <div class="box">If the writing direction is horizontal.</div>
+        </div>
+    </main>
+
+    <div class="container" id="container">
+        <div>One</div>
+        <div>Item two</div>
+        <div>The item we will refer to as three</div>
+    </div>
+</body>
+</html>

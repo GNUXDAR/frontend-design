@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoelements</title>
+    <style>
+        p:first-of-type::first-letter {
+            color: #0c55ff;
+            float: left;
+            font-size: 2.6em;
+            font-weight: bold;
+            line-height: 1;
+            margin-inline-end: 0.2rem;
+        }
+
+        article {
+            display: flow-root;
+        }
+
+        article>*+* {
+            margin-top: 1em;
+        }
+
+        h1 {
+            font-weight: bold;
+            max-width: 22ch;
+        }
+
+        /* before && after */
+        .bef {
+            all:initial
+        }
+        .bef::before {
+            content: "➡️";
+        }
+        .bef::after {
+            content: "⬅️";
+        }
+
+        /* ::first-line */
+        p.fl {
+            font-size: 1.2em;
+        }
+
+        p.fl::first-line {
+            color: goldenrod;
+            font-weight: bold;
+        }
+
+        /* ::backdrop */
+        dialog::backdrop {
+            background-color: darkorange;
+            background-image: url("data:image/svg+xml,%3Csvg width='180' height='180' viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M82.42 180h-1.415L0 98.995v-2.827L6.167 90 0 83.833V81.004L81.005 0h2.827L90 6.167 96.167 0H98.996L180 81.005v2.827L173.833 90 180 96.167V98.996L98.995 180h-2.827L90 173.833 83.833 180H82.42zm0-1.414L1.413 97.58 8.994 90l-7.58-7.58L82.42 1.413 90 8.994l7.58-7.58 81.006 81.005-7.58 7.58 7.58 7.58-81.005 81.006-7.58-7.58-7.58 7.58zM175.196 0h-25.832c1.033 2.924 2.616 5.59 4.625 7.868C152.145 9.682 151 12.208 151 15c0 5.523 4.477 10 10 10 1.657 0 3 1.343 3 3v4h16V0h-4.803c.51.883.803 1.907.803 3 0 3.314-2.686 6-6 6s-6-2.686-6-6c0-1.093.292-2.117.803-3h10.394-13.685C161.18.938 161 1.948 161 3v4c-4.418 0-8 3.582-8 8s3.582 8 8 8c2.76 0 5 2.24 5 5v2h4v-4h2v4h4v-4h2v4h2V0h-4.803zm-15.783 0c-.27.954-.414 1.96-.414 3v2.2c-1.25.254-2.414.74-3.447 1.412-1.716-1.93-3.098-4.164-4.054-6.612h7.914zM180 17h-3l2.143-10H180v10zm-30.635 163c-.884-2.502-1.365-5.195-1.365-8 0-13.255 10.748-24 23.99-24H180v32h-30.635zm12.147 0c.5-1.416 1.345-2.67 2.434-3.66l-1.345-1.48c-1.498 1.364-2.62 3.136-3.186 5.14H151.5c-.97-2.48-1.5-5.177-1.5-8 0-12.15 9.84-22 22-22h8v30h-18.488zm13.685 0c-1.037-1.793-2.976-3-5.197-3-2.22 0-4.16 1.207-5.197 3h10.394zM0 148h8.01C21.26 148 32 158.742 32 172c0 2.805-.48 5.498-1.366 8H0v-32zm0 2h8c12.15 0 22 9.847 22 22 0 2.822-.53 5.52-1.5 8h-7.914c-.567-2.004-1.688-3.776-3.187-5.14l-1.346 1.48c1.09.99 1.933 2.244 2.434 3.66H0v-30zm15.197 30c-1.037-1.793-2.976-3-5.197-3-2.22 0-4.16 1.207-5.197 3h10.394zM0 32h16v-4c0-1.657 1.343-3 3-3 5.523 0 10-4.477 10-10 0-2.794-1.145-5.32-2.992-7.134C28.018 5.586 29.6 2.924 30.634 0H0v32zm0-2h2v-4h2v4h4v-4h2v4h4v-2c0-2.76 2.24-5 5-5 4.418 0 8-3.582 8-8s-3.582-8-8-8V3c0-1.052-.18-2.062-.512-3H0v30zM28.5 0c-.954 2.448-2.335 4.683-4.05 6.613-1.035-.672-2.2-1.16-3.45-1.413V3c0-1.04-.144-2.046-.414-3H28.5zM0 17h3L.857 7H0v10zM15.197 0c.51.883.803 1.907.803 3 0 3.314-2.686 6-6 6S4 6.314 4 3c0-1.093.292-2.117.803-3h10.394zM109 115c-1.657 0-3 1.343-3 3v4H74v-4c0-1.657-1.343-3-3-3-5.523 0-10-4.477-10-10 0-2.793 1.145-5.318 2.99-7.132C60.262 93.638 58 88.084 58 82c0-13.255 10.748-24 23.99-24h16.02C111.26 58 122 68.742 122 82c0 6.082-2.263 11.636-5.992 15.866C117.855 99.68 119 102.206 119 105c0 5.523-4.477 10-10 10zm0-2c-2.76 0-5 2.24-5 5v2h-4v-4h-2v4h-4v-4h-2v4h-4v-4h-2v4h-4v-4h-2v4h-4v-2c0-2.76-2.24-5-5-5-4.418 0-8-3.582-8-8s3.582-8 8-8v-4c0-2.64 1.136-5.013 2.946-6.66L72.6 84.86C70.39 86.874 69 89.775 69 93v2.2c-1.25.254-2.414.74-3.447 1.412C62.098 92.727 60 87.61 60 82c0-12.15 9.84-22 22-22h16c12.15 0 22 9.847 22 22 0 5.61-2.097 10.728-5.55 14.613-1.035-.672-2.2-1.16-3.45-1.413V93c0-3.226-1.39-6.127-3.6-8.14l-1.346 1.48C107.864 87.987 109 90.36 109 93v4c4.418 0 8 3.582 8 8s-3.582 8-8 8zM90.857 97L93 107h-6l2.143-10h1.714zM80 99c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm20 0c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6z' fill='%23000000' fill-opacity='0.44' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+        .container {
+            max-width: 72rem;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        button {
+            -webkit-tap-highlight-color: transparent;
+            box-sizing: border-box;
+            font-family: inherit;
+            display: inline-block;
+            text-align: center;
+            user-select: none;
+            border: 1px solid #007bff;
+            padding: .375rem .75rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            border-radius: .25rem;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+        }
+
+
+        @supports not selector(::backdrop) {
+
+            body::before {    
+                box-sizing: border-box;
+                content: "⚠️ Your browser doesn't support ::backdrop";
+                display: block;
+                max-width: 72rem;
+                margin: auto;
+                color: #f44336;
+                font-weight: bold;
+                padding: 2rem 2rem 0;
+            }
+        }
+
+        /* ::marker */
+
+        ::marker {
+            color: hotpink;
+        }
+
+        ul ::marker {
+            font-size: 1.5em;
+        }
+
+        ol ::marker {
+            font-size: 1.1em;
+        }
+
+        summary::marker {
+            content: '\002B'' '; /* Plus symbol with space */
+        }
+
+        details[open] summary::marker {
+            content: '\2212'' '; /* Minus symbol with space */
+        }
+
+        /* ::selection */
+        ::selection {
+            background-color: #ffcc00;
+            color:#00ffdd;
+        }
+
+        /* ::placeholder */
+        ::placeholder {
+            color: #007bff;
+            font-size: 0.6em;
+        }
+
+        /* ::cue */
+        video::cue {
+            color: yellow;
+        }
+
+        video::cue(b) {
+            color: red;
+        }
+
+        video::cue(i) {
+            color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <h1>Pseudoelementos</h1>
+        <h2>::first-letter</h2>
+        <p>
+            Si tienes un artículo de contenido y quieres que la primera letra sea mucho más grande, ¿cómo lo logras?
+            En CSS, puedes usar el seudoelemento <code>::first-letter</code> para lograr este tipo de detalles de
+            diseño.
+        </p>
+        <pre>
+            <code>
+                p::first-letter {
+                color: blue;
+                float: left;
+                font-size: 2.6em;
+                font-weight: bold;
+                line-height: 1;
+                margin-inline-end: 0.2rem;
+                }
+            </code>
+        </pre>
+
+        <h2>::before y ::after</h2>
+        <p>Los pseudo-elementos ::before y ::after en CSS permiten insertar contenido adicional antes o después del contenido real
+        de un elemento, respectivamente. Estos pseudo-elementos son útiles para agregar contenido decorativo o funcionalidad
+        adicional a los elementos HTML sin necesidad de modificar el contenido HTML directamente.</p>
+    </article>
+
+    <p class="bef">
+        Hola Mundo
+    </p>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, quam possimus? Sed tempora asperiores architecto numquam error velit inventore vero. Nisi iure sed saepe odit corporis ducimus recusandae ullam ad.
+    </p>
+
+    <h2>::first-line</h2>
+    <p>
+        El seudoelemento ::first-line te permitirá aplicar diseño a la primera línea de texto solo si el elemento con
+        ::first-line aplicado tiene un valor display de <code> block, inline-block, list-item, table-caption o table-cell</code>.
+    </p>
+
+    <br>
+    <h3>Example</h3>
+    <p class="fl">The first line of this paragraph is <code>goldenrod</code>, which is a <em>great</em> color. Here is some
+        lipsum to
+        fill it out Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Sed posuere consectetur est at
+        lobortis.
+    </p>
+
+    <h2>::backdrop</h2>
+    <p>
+        El pseudo-elemento ::backdrop se utiliza en CSS para aplicar estilos a la capa de fondo detrás de un cuadro de diálogo
+        modal cuando este está abierto. Este pseudo-elemento solo se puede seleccionar utilizando JavaScript y se utiliza
+        principalmente en combinación con el método document.getAnimations() para manipular animaciones CSS en la capa de fondo.
+    </p>
+
+    <div class="container">
+        <p>dialog element comes with a backdrop and we can style that with ::backdrop selector</p>
+
+        <button onclick="openDialog()">Open dialog</button>
+
+
+        <dialog>
+            <h2>I'm an open dialog window</h2>
+            <p>Check out my backdrop :)</p>
+            <button onclick="closeDialog()">Close</button>
+        </dialog>
+    </div>
+
+    <h2>::marker</h2>
+    <p>
+        El seudoelemento ::marker te permite aplicar estilo a la viñeta o al número de un elemento de la lista o a la flecha de
+        un elemento <code>summary</code>.
+    </p>
+        <details>
+            <summary>Lorem</summary>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente quo ullam, illum perspiciatis quasi deserunt numquam provident nam totam explicabo molestias rem iusto dolores nesciunt tenetur earum nemo eum blanditiis.
+        </details>
+   
+        <ul>
+            <li>option</li>
+            <li>option</li>
+            <li>option</li>
+        </ul>
+
+        <ol>
+            <li>option</li>
+            <li>option</li>
+            <li>option</li>
+        </ol>
+    
+    <h2>::selection</h2>
+    <p>
+        En CSS se utiliza para aplicar estilos al texto que ha sido seleccionado por el usuario en la página web. Esto incluye
+        cualquier texto que el usuario haya resaltado con el cursor del mouse o seleccionado utilizando métodos de selección de
+        texto.
+    </p>
+    
+    <h2>::placeholder</h2>
+    <p>
+        El pseudo-elemento ::placeholder en CSS se utiliza para aplicar estilos al texto del marcador de posición (placeholder)
+        dentro de un elemento de entrada (input o textarea). El marcador de posición es el texto que se muestra dentro del campo de entrada 
+        cuando está vacío y desaparece una vez que el usuario comienza a escribir.
+        <input type="text" placeholder="Ingrese su Nombre">
+    </p>
+
+    <h2>::cue</h2>
+    <p>
+        El último de este recorrido por los seudoelementos es el ::cue. Esto te permite definir el estilo de las indicaciones de
+        WebVTT, que son las leyendas de un elemento video.
+        
+        También puedes pasar un selector a una ::cue, lo que te permite aplicar diseño a elementos específicos dentro de una
+        leyenda.
+    </p>
+
+    <br>
+    <a href="#">Up</a>
+
+
+    <script>
+        // backdrop
+        var dialog = document.querySelector('dialog');
+
+        function openDialog() {
+            dialog.showModal();
+        }
+
+        function closeDialog() {
+            dialog.close();
+        }
+    </script>
+</body>
+
+</html>

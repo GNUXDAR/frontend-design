@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --color-primary-x-light:gold;
+            --color-primary: green;
+        }
+        .demo {
+            width: 250px;
+            height: 250px;
+            background: var(--color-primary-x-light);
+            border: 1px solid var(--color-primary);
+        }
+
+        label {
+            display: block;
+            width: max-content;
+        }
+
+    </style>
+</head>
+<body>
+        <main>
+            <div class="wrapper">
+                <article class="flow">
+                    <h1>The <code>skew</code> function</h1>
+                    <figure class="callout">
+                        <p>
+                            Use the slider to see how the <code>skew</code> function affects the box.
+                        </p>
+                    </figure>
+                    <label>
+                        Modify <code>skew</code>
+                        <input data-transform="x" type="range" min="0" max="50" value="0" />
+                    </label>
+                    <div class="demo"></div>
+                </article>
+            </div>
+        </main>
+        <script>
+            const box = document.querySelector('.demo');
+                const sliders = [...document.querySelectorAll('input[type="range"]')];
+
+                const update = () => {
+                    let transform = sliders
+                        .map(slider => {
+                            return `skew(${slider.value}deg)`;
+                        })
+                        .join(' ');
+
+                    box.setAttribute('style', `transform: ${transform}`);
+                };
+
+                sliders.forEach(slider =>
+                    slider.addEventListener('input', () => {
+                        update();
+                    })
+                );
+        </script>
+</body>
+</html>

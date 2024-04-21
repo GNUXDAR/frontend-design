@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display</title>
+    <style>
+        span.element-one {
+            display: none;
+        }
+        span.element-two {
+            visibility: hidden;
+        }
+        span.element-three {
+            opacity: 0;
+        }
+
+        /* square */
+        .demo > * {
+            width: 250px;
+            height: 200px;
+        }
+
+        .demo > * + * {
+            margin-top: -150px;
+            opacity: 0.8;
+            box-shadow: 0 -1px 10px rgba(0 0 0 / 60%);
+        }
+
+        .demo > :first-child {
+            background: aliceblue;
+            border: 2px solid lightblue;
+        }
+
+        .demo > :nth-child(2) {
+            background: pink;
+            border: 2px solid hotpink;
+        }
+
+        .demo > :last-child {
+            background: wheat;
+            border: 2px solid gold;
+        }
+
+    </style>
+</head>
+<body>
+
+        <main>
+            <span class="element-one">programar</span> 
+            <span class="element-two">es muy</span>
+            <span class="element-three">divertido</span>
+
+            <h1>Default <code>z-index</code> behaviour</h1>
+            <div class="demo">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+            </div>
+        </main>
+</body>
+</html>

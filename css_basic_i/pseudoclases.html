@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudoclases</title>
+    <style>
+        .container{
+            width: 400px;
+            padding: 4%;
+            background-color: aliceblue;
+        }
+
+        input:invalid {
+            border-color: red;
+        }
+
+        input:valid {
+         border-color: green;
+        }
+
+        input {
+            min-width: 320px;
+            padding: 0.5rem 1rem;
+            line-height: 1;
+            font: inherit;
+            border: 1px solid var(--color-mid);
+            border-radius: 0.25rem;
+        }
+
+        .info {
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-block-start: 0.5em;
+        }
+
+        /* hover */
+        a:hover {
+            background: black;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* active */
+        .button:focus {
+            outline: 2px dashed blue;
+            outline-offset: 2px;
+            background-color: black;
+            color: white;
+        }
+
+        /* disable y enabled */
+        .state button:disabled {
+            background: grey;
+            border-color: grey;
+            cursor: not-allowed;
+        }
+
+        .state button:enabled {
+            border: 5px solid gold;
+        }
+
+        .state button:disabled:hover {
+            box-shadow: none;
+        }
+
+
+        /* Presentational styles */
+        div {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pseudoclases</h1>
+    <p>
+        Supongamos que tienes un formulario de registro de correo electrónico y deseas que el campo del formulario de correo
+        electrónico tenga un borde rojo si contiene una dirección de correo electrónico no válida. ¿Cómo puede hacerlo? Puedes
+        usar una seudoclase <code>:invalid</code> de CSS, que es una de las muchas seudoclases que proporciona el navegador.
+    </p>
+
+    <div class="container">
+        <form>
+            <label for="email">Email address</label>
+            <input type="email" id="email" required placeholder="A valid email, like name@domain.com"
+                aria-describedby="emailinfo" />
+            <p class="info" id="emailinfo">Add a valid email address to see the state change</p>
+        </form>
+    </div>
+
+    <h2>Estados Interactivos</h2>
+    <p>
+        Las siguientes seudoclases se aplican debido a una interacción que un usuario tiene con tu página.
+    </p>
+
+    <h3>:hover</h3>
+    <p>This is a link: <a href="#">hover over me</a></p>
+
+    <h3>:active</h3>
+    <div class="wrapper">
+        <button class="button">Use your tab key to focus this button</button>
+    </div>
+
+    <h3>:link y :visited</h3>
+    <p>
+        La seudoclase :link se puede aplicar a cualquier elemento que tenga un valor href que todavía no haya visitado.
+    </p>
+
+    <p>
+        <strong>:visited</strong>
+        Puedes definir el estilo de un vínculo que ya visitó el usuario con la seudoclase :visited. Este es el estado opuesto a
+        :link, pero tienes menos propiedades de CSS para usar por motivos de seguridad. Solo puedes aplicar ajustes de estilo a
+        color, background-color, border-color y outline-color, y al color de SVG fill y stroke.
+    </p>
+
+    <cite>
+        <h3>El orden es importante</h3>
+        Si defines un diseño :visited, se puede anular con una seudoclase de vínculo con al menos la misma especificidad. Por
+        este motivo, te recomendamos que uses la regla de la LVHA para aplicar diseño a los vínculos con seudoclases en un orden
+        específico: :link, :visited, :hover y :active.
+    </cite>
+
+    <code class="codes">
+        a:link {} <br>
+        a:visited {} <br>
+        a:hover {} <br>
+        a:active {}
+    </code>
+
+    <h2>Estados de  formulario</h2>
+    <p>
+        Las siguientes seudoclases pueden seleccionar elementos de formulario, en los diversos estados en los que pueden estar
+        estos elementos durante la interacción con ellos.
+    </p>
+
+    <h3>:disabled y :enabled</h3>
+    <div class="state">
+        <button disabled>I am a button with a disabled state</button>
+        <button>I am an enabled button</button>
+    </div>
+
+    <h2>Encontrar y excluir varios elementos</h2>
+    <p>
+        Algunas seudoclases te ayudan a escribir una CSS más compacta.
+    </p>
+
+    <h3>:is()</h3>
+    <p>
+        Si deseas encontrar todos los elementos secundarios h2, li y img en un elemento .post, te recomendamos escribir una
+        lista de selectores como la siguiente:
+    </p>
+    <code>
+        .post h2, <br>
+        .post li, <br>
+        .post img { <br>
+        … <br>
+        }
+    </code>
+    <p>Con la seudoclase :is(), puedes escribir una versión más compacta:</p>
+    <code>
+        .post :is(h2, li, img) { <br>
+        … <br>
+        }
+    </code>
+
+    <h3>:not()</h3>
+    <p>
+        También puedes excluir elementos con la seudoclase :not(). Por ejemplo, puedes usarlo para definir el estilo de todos
+        los vínculos que no tengan un atributo class, ó por ejemplo, un <img> debe tener un alt, incluso si es un valor vacío, por lo que puedes escribir una regla de CSS que
+        agregue un contorno rojo grueso a las imágenes no válidas:
+    </p>
+
+    <code>
+        img:not([alt]) { <br>
+            outline: 10px red; <br>
+        }
+    </code>
+</body>
+</html>

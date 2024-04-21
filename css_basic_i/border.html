@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Border</title>
+    <style>
+        .my-element {
+            color: blue;
+            border: solid; /* color azul */
+            padding: 2rem;
+        }
+
+        /* .my-element {
+            color: blue;
+            border: solid goldenrod;
+            padding: 2rem;
+        } */
+        .preview {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+            border-color: var(--color-primary);
+            border-style: solid;
+            border-color: antiquewhite;
+            aspect-ratio: 2/1;
+            min-height: 8rem;
+        }
+
+        .auto-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size, 16rem), 1fr));
+            gap: 1rem;
+            padding: 0;
+        }
+
+        main {
+            width: 100%;
+        }
+
+        /* borders */
+        .my-border {
+            position: relative;
+            width: 250px;
+            height: 250px;
+            margin-top: 10px;
+            border: 2px solid;
+            border-radius: 1em 2em 3em 4em;
+        }
+
+
+        /* Presentational styles */
+        .my-border code {
+            position: absolute;
+            padding: 5px;
+        }
+
+        .btt-left {
+            bottom: 0;
+            left: 0;
+        }
+
+        .right {
+            top: 0;
+            right: 0;
+        }
+
+        .btt-right {
+            bottom: 0;
+            right: 0;
+        }
+
+        .left {
+            top: 0;
+            left: 0;
+        }
+
+        /* radioactivo */
+        .my-border-two {
+            width: 250px;
+            height: 250px;
+        }
+        .my-border-two {
+            border: 2px solid;
+            border-radius: 95px 155px 148px 103px / 48px 95px 130px 203px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Border</h1>
+    <p class="my-element">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo saepe dolor suscipit, quis animi tempore aperiam expedita libero quo. Adipisci dolor voluptatem dolorem dolorum voluptatum obcaecati reprehenderit similique perferendis veniam.
+    </p>
+
+    <main>
+        <div class="auto-grid">
+            <div class="preview" style="border-width: thin">
+                <code>border-width: thin;</code>
+            </div>
+            <div class="preview" style="border-width: medium">
+                <code>border-width: medium;</code>
+            </div>
+            <div class="preview" style="border-width: thick">
+                <code>border-width: thick;</code>
+            </div>
+        </div>
+
+        <p>
+            También puedes especificar el radio de cada esquina en la abreviatura, siguiendo el orden: arriba a la izquierda, arriba
+            a la derecha, abajo a la derecha y abajo a la izquierda. <br><code>border-radius: 1em 2em 3em 4em;</code>
+        </p>
+        <div class="my-border">
+            <code class="left">1em</code>
+            <code class="right">2em</code>
+            <code class="btt-right">3em</code>
+            <code class="btt-left">4em</code>
+        </div>
+
+        <p>
+            Puedes definir estos valores en la abreviatura border-radius, con un / para definir los valores de la elíptica, después
+            de los valores estándar. Esto te permite ser creativo y crear algunas formas complejas.
+        </p>
+
+        <div class="my-border-two">
+        </div>
+    </main>
+</body>
+</html>
