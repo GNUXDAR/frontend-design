@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradiantes</title>
+
+    <style>
+        .intro {
+            width: 100%;
+            background: linear-gradient(to top, #3c006b, #9948d9);
+            color: white;
+            padding: 7rem 2rem 4rem 2rem;
+        }
+
+        .intro h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+            line-height: 1.1;
+            max-width: 18ch;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 50ch;
+        }
+
+        .intro a {
+            font-weight: 700;
+            font-size: 1.6rem;
+            color: currentColor;
+        }
+
+        .intro>*+* {
+            margin-top: 1.5em;
+        }
+
+        body {
+            padding: 0;
+        }
+
+        /* gradiente lineal */
+        .gradiente-lineal {
+            /* background: linear-gradient(black, white); */
+            background: linear-gradient(to right, black, white);
+        }
+
+        /* Presentational styles */
+        .gradiente-lineal {
+            width: 250px;
+            height: 250px;
+        }
+
+        /* gradiente lineal 2 */
+        .gradiente-lineal2 {
+            background: linear-gradient(45deg, darkred 20%, crimson, darkorange 60%, gold, bisque);
+        }
+
+        /* Presentational styles */
+        .gradiente-lineal2 {
+            width: 250px;
+            height: 250px;
+        }
+
+        /* gradiente radiel */
+        .my-element-radial {
+            background: radial-gradient(darkred 20%, crimson, darkorange 60%, gold, bisque);
+        }
+
+        /* Presentational styles */
+        .my-element-radial {
+            width: 250px;
+            height: 250px;
+        }
+
+        /* radial 2 */
+        .my-element-radial2 {
+            background: radial-gradient(closest-side, darkorange 60%, gold, bisque, darkred 20%, crimson);
+        }
+
+        /* Presentational styles */
+        .my-element-radial2  {
+            width: 250px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <article class="intro">
+        <h1>At AC CO, we do things differently</h1>
+        <p>
+            Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit
+            sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.
+        </p>
+        <div><a href="https://arturocabrera.com/blog">Find out more</a></div>
+    </article>
+
+    <h2>Gradienate Lineal</h2>
+    <div class="gradiente-lineal"></div>
+    <div class="gradiente-lineal2"></div>
+
+    <h2>Gradiante Radial</h2>
+    <div class="my-element-radial"></div>
+    <div class="my-element-radial2"></div>
+</body>
+
+</html>
