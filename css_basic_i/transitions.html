@@ -1,397 +1,481 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transitions</title>
-    <style>
-        .square1 {
-            width: 100px;
-            height: 100px;
-            background-color: turquoise;
-            border-radius: 8px;
-            margin-bottom: 24px;
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Transitions</title>
+	<style>
+		.square1 {
+			width: 100px;
+			height: 100px;
+			background-color: turquoise;
+			border-radius: 8px;
+			margin-bottom: 24px;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
 
-        .square1:hover {
-            transform: scale(1.4);
-        }
+		.square1:hover {
+			transform: scale(1.4);
+		}
 
-        .square1.has-transition {
-            transition: transform 150ms ease-in-out;
-        }
+		.square1.has-transition {
+			transition: transform 150ms ease-in-out;
+		}
 
-        .square1 span {
-        font-size: 1.5em;
-        }
+		.square1 span {
+		font-size: 1.5em;
+		}
 
-        .container1 {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+		.container1 {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
 
-        /* Decorative styles */
-        body {
-            display: grid;
-            place-items: center;
-        }
+		/* Decorative styles */
+		body {
+			display: grid;
+			place-items: center;
+		}
 
-        /* VARIAS PROPIEDADES */
-        .square {
-        width: 100px;
-        height: 100px;
-        border-radius: 8px;
-        background-color: violet;
-        transition-duration: 600ms;
-        transition-timing-function: ease;
-        padding: 8px;
-        }
+		/* VARIAS PROPIEDADES */
+		.square {
+		width: 100px;
+		height: 100px;
+		border-radius: 8px;
+		background-color: violet;
+		transition-duration: 600ms;
+		transition-timing-function: ease;
+		padding: 8px;
+		}
 
-        .square.tp-transform {
-        transition-property: transform;
-        }
+		.square.tp-transform {
+		transition-property: transform;
+		}
 
-        .square.tp-color {
-        transition-property: background-color;
-        }
+		.square.tp-color {
+		transition-property: background-color;
+		}
 
-        .square.tp-both {
-        transition-property: background-color, transform;
+		.square.tp-both {
+		transition-property: background-color, transform;
 
-        /* 
-        You can also use the keyword `all`, e.g.:
-        
-        transition-property: all;
-        */
-        }
+		/* 
+		You can also use the keyword `all`, e.g.:
+		
+		transition-property: all;
+		*/
+		}
 
-        .square.tp-none {
-        transition-property: none;
-        }
+		.square.tp-none {
+		transition-property: none;
+		}
 
-        .square:is(:hover, :focus) {
-        transform: scale(1.3);
-        background-color: cornflowerblue;
-        }
+		.square:is(:hover, :focus) {
+		transform: scale(1.3);
+		background-color: cornflowerblue;
+		}
 
-        .wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 32px;
-        }
+		.wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 32px;
+		}
 
-        .wrapper .square:nth-child(odd) {
-        justify-self: end;
-        }
+		.wrapper .square:nth-child(odd) {
+		justify-self: end;
+		}
 
-        .wrapper .square:nth-child(even) {
-        justify-self: start;
-        }
+		.wrapper .square:nth-child(even) {
+		justify-self: start;
+		}
 
-        /* Decorative styles */
-        body {
-        display: grid;
-        place-items: center;
-        }
+		/* Decorative styles */
+		body {
+		display: grid;
+		place-items: center;
+		}
 
-        /* DURACION DE TRANSICION */
-        .square2 {
-            width: 100px;
-            height: 100px;
-            border-radius: 8px;
-            background-color: springgreen;
-            transition-property: transform;
-            transition-timing-function: ease;
-            padding: 8px;
-        }
+		/* DURACION DE TRANSICION */
+		.square2 {
+			width: 100px;
+			height: 100px;
+			border-radius: 8px;
+			background-color: springgreen;
+			transition-property: transform;
+			transition-timing-function: ease;
+			padding: 8px;
+		}
 
-        .square2.td-instant {
-            transition-duration: 0s;
-        }
+		.square2.td-instant {
+			transition-duration: 0s;
+		}
 
-        .square2.td-speedy {
-            transition-duration: 200ms;
-        }
+		.square2.td-speedy {
+			transition-duration: 200ms;
+		}
 
-        .square2.td-middling {
-            transition-duration: 800ms;
-        }
+		.square2.td-middling {
+			transition-duration: 800ms;
+		}
 
-        .square2.td-glacial {
-            transition-duration: 5s;
-        }
+		.square2.td-glacial {
+			transition-duration: 5s;
+		}
 
-        .square2:is(:hover, :focus) {
-            transform: scale(0.8);
-        }
+		.square2:is(:hover, :focus) {
+			transform: scale(0.8);
+		}
 
-        .wrapper2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-gap: 32px;
-        }
+		.wrapper2 {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 32px;
+		}
 
-        .wrapper2 .square2:nth-child(odd) {
-            justify-self: end;
-        }
+		.wrapper2 .square2:nth-child(odd) {
+			justify-self: end;
+		}
 
-        .wrapper2 .square2:nth-child(even) {
-            justify-self: start;
-        }
+		.wrapper2 .square2:nth-child(even) {
+			justify-self: start;
+		}
 
-        .square2 .duration {
-            font-family: monospace;
-        }
+		.square2 .duration {
+			font-family: monospace;
+		}
 
-        /* FUNCIÓN DE TIEMPO DE TRANSICIÓN */
-        .square3 {
-            width: 150px;
-            max-height: 100px;
-            background-color: lightcoral;
-            border-radius: 8px;
-            text-align: center;
-            padding: 8px;
-            margin-bottom: 4px;
+		/* FUNCIÓN DE TIEMPO DE TRANSICIÓN */
+		.square3 {
+			width: 150px;
+			max-height: 100px;
+			background-color: lightcoral;
+			border-radius: 8px;
+			text-align: center;
+			padding: 8px;
+			margin-bottom: 4px;
 
-            transition-property: width;
-            transition-duration: 1s;
-        }
+			transition-property: width;
+			transition-duration: 1s;
+		}
 
-        .square3.ttf-linear {
-            transition-timing-function: linear;
-        }
+		.square3.ttf-linear {
+			transition-timing-function: linear;
+		}
 
-        .square3.ttf-ease {
-            transition-timing-function: ease;
-        }
+		.square3.ttf-ease {
+			transition-timing-function: ease;
+		}
 
-        .square3.ttf-ease-in {
-            transition-timing-function: ease-in;
-        }
+		.square3.ttf-ease-in {
+			transition-timing-function: ease-in;
+		}
 
-        .square3.ttf-ease-out {
-            transition-timing-function: ease-out;
-        }
+		.square3.ttf-ease-out {
+			transition-timing-function: ease-out;
+		}
 
-        .square3.ttf-ease-in-out {
-            transition-timing-function: ease-in-out;
-        }
+		.square3.ttf-ease-in-out {
+			transition-timing-function: ease-in-out;
+		}
 
-        .square3.ttf-steps {
-            transition-timing-function: steps(3);
-        }
+		.square3.ttf-steps {
+			transition-timing-function: steps(3);
+		}
 
-        .square3.ttf-cubic {
-            transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-        }
+		.square3.ttf-cubic {
+			transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		}
 
-        .square3:is(:hover, :focus) {
-            width: 50%;
-        }
+		.square3:is(:hover, :focus) {
+			width: 50%;
+		}
 
 
-        /* RETRASO DE TRANSICION */
-        .wrapper3 {
-            display: flex;
-            padding: 0;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+		/* RETRASO DE TRANSICION */
+		.wrapper3 {
+			display: flex;
+			padding: 0;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
 
-        .menu-item {
-            width: 150px;
-            max-height: 100px;
-            background-color: darkslateblue;
-            color: white;
-            border-radius: 8px;
-            text-align: center;
-            padding: 8px;
-            margin-bottom: 4px;
+		.menu-item {
+			width: 150px;
+			max-height: 100px;
+			background-color: darkslateblue;
+			color: white;
+			border-radius: 8px;
+			text-align: center;
+			padding: 8px;
+			margin-bottom: 4px;
 
-            transform-origin: 0 0;
-            transform: translateX(-100px);
-            opacity: 0;
+			transform-origin: 0 0;
+			transform: translateX(-100px);
+			opacity: 0;
 
-            transition-property: transform, opacity;
-            transition-duration: 1s;
-            transition-timing-function: ease;
-        }
+			transition-property: transform, opacity;
+			transition-duration: 1s;
+			transition-timing-function: ease;
+		}
 
-        .wrapper3:is(:hover, :focus) .menu-item {
-            transform: translateX(0);
-            opacity: 100%;
-        }
+		.wrapper3:is(:hover, :focus) .menu-item {
+			transform: translateX(0);
+			opacity: 100%;
+		}
 
-        .wrapper3 .menu-item:nth-of-type(1) {
-            transition-delay: 0ms;
-        }
+		.wrapper3 .menu-item:nth-of-type(1) {
+			transition-delay: 0ms;
+		}
 
-        .wrapper3 .menu-item:nth-of-type(2) {
-            transition-delay: 100ms;
-        }
+		.wrapper3 .menu-item:nth-of-type(2) {
+			transition-delay: 100ms;
+		}
 
-        .wrapper3 .menu-item:nth-of-type(3) {
-            transition-delay: 200ms;
-        }
+		.wrapper3 .menu-item:nth-of-type(3) {
+			transition-delay: 200ms;
+		}
 
-        .wrapper3 .menu-item:nth-of-type(4) {
-            transition-delay: 300ms;
-        }
+		.wrapper3 .menu-item:nth-of-type(4) {
+			transition-delay: 300ms;
+		}
 
-        .wrapper3 .menu-item:nth-of-type(5) {
-            transition-delay: 400ms;
-        }
+		.wrapper3 .menu-item:nth-of-type(5) {
+			transition-delay: 400ms;
+		}
 
-        .wrapper3 p {
-            font-weight: bold;
-            margin-bottom: 8px;
-        }
+		.wrapper3 p {
+			font-weight: bold;
+			margin-bottom: 8px;
+		}
 
-        /* TRANSFORMACION */
-        .square4 {
-            width: 100px;
-            height: 100px;
-            border-radius: 8px;
-            margin-top: 4px;
-            background: cornflowerblue;
+		/* TRANSFORMACION */
+		.square4 {
+			width: 100px;
+			height: 100px;
+			border-radius: 8px;
+			margin-top: 4px;
+			background: cornflowerblue;
 
-            opacity: 0.5;
-            transform: scale(1) rotate(0);
-        }
+			opacity: 0.5;
+			transform: scale(1) rotate(0);
+		}
 
-        .square4.has-transition2 {
-            transition: transform 750ms ease-in-out 0s;
-        }
+		.square4.has-transition2 {
+			transition: transform 750ms ease-in-out 0s;
+		}
 
-        .square4:is(:hover, :focus) {
-            transform: scale(1.5) rotate(135deg);
-        }
+		.square4:is(:hover, :focus) {
+			transform: scale(1.5) rotate(135deg);
+		}
 
-        /* SOMBRAS */
-        .wrapper4 {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
+		/* SOMBRAS */
+		.wrapper4 {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
 
-        .square5 {
-            width: 100px;
-            height: 100px;
-            margin: 8px;
-            font-size: 2em;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 8px;
-            background-color: white;
+		.square5 {
+			width: 100px;
+			height: 100px;
+			margin: 8px;
+			font-size: 2em;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 8px;
+			background-color: white;
 
-            transition-property: box-shadow, transform;
-            transition-duration: 350ms;
-            transition-timing-function: ease;
+			transition-property: box-shadow, transform;
+			transition-duration: 350ms;
+			transition-timing-function: ease;
 
-            box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
-        }
+			box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.24);
+		}
 
-        .square5:is(:hover, :focus) {
-            box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
-            transform: translateY(-8px);
-        }
+		.square5:is(:hover, :focus) {
+			box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
+			transform: translateY(-8px);
+		}
 
-    </style>
+		/* filtros */
+		.emoji {
+			font-size: 8em;
+			filter: grayscale(100%);
+			transition: filter 450ms ease;
+		}
+
+		.emoji:is(:hover, :focus) {
+			filter: grayscale(0%) drop-shadow(0 8px 8px rgba(0, 0, 0, 0.5));
+		}
+
+		.wrapper5 {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+		}
+
+		/* TRANSICIONES DE ENTRADA Y SALIDA */
+		.bubble {
+			width: 50px;
+			height: 50px;
+			background-color: aquamarine;
+			border-radius: 100%;
+			text-align: center;
+			padding: 16px;
+			font-size: 2em;
+			margin: 2px;
+
+			/* When not hovering, this transition is active */
+			transition: all 5s ease-in 200ms;
+		}
+
+		.bubble:is(:hover, :focus) {
+			background-color: paleturquoise;
+			transform: scale(1.6);
+			opacity: 0.6;
+
+			/* This transition is active on hover */
+			transition: transform 150ms cubic-bezier(0.5, 1.75, 0.75, 1.25);
+		}
+
+		.wrapper6 {
+		display: flex;
+		flex-wrap: wrap;
+		width: 270px;
+		padding: 0;
+		}
+
+	</style>
 
 </head>
 <body>
-    <div class="container1">
-        <div class="square1 has-transition">
-            <span>Hover!</span>
-        </div>
-        <div>
-            <input type="checkbox" id="has-transition" checked>
-            <label for="has-transition">Transition enabled?</label>
-        </div>
-    </div>
+	<div class="container1">
+		<div class="square1 has-transition">
+			<span>Hover!</span>
+		</div>
+		<div>
+			<input type="checkbox" id="has-transition" checked>
+			<label for="has-transition">Transition enabled?</label>
+		</div>
+	</div>
 
-    <h2>Varias propiedades</h2>
+	<h2>Varias propiedades</h2>
 
-    <div class="wrapper">
-        <div class="square tp-none" tabindex="0">none</div>
-        <div class="square tp-transform" tabindex="0">transform</div>
-        <div class="square tp-color" tabindex="0">color</div>
-        <div class="square tp-both" tabindex="0">both</div>
-    </div>
+	<div class="wrapper">
+		<div class="square tp-none" tabindex="0">none</div>
+		<div class="square tp-transform" tabindex="0">transform</div>
+		<div class="square tp-color" tabindex="0">color</div>
+		<div class="square tp-both" tabindex="0">both</div>
+	</div>
 
-    <h2>Duración de transición</h2>
-    <div class="wrapper2">
-        <div class="square2 td-instant" tabindex="0">instant<p class="duration">0ms</p>
-        </div>
-        <div class="square2 td-speedy" tabindex="0">speedy<p class="duration">200ms</p>
-        </div>
-        <div class="square2 td-middling" tabindex="0">middling<p class="duration">800ms</p>
-        </div>
-        <div class="square2 td-glacial" tabindex="0">glacial<p class="duration">5000ms</p>
-        </div>
-    </div>
+	<h2>Duración de transición</h2>
+	<div class="wrapper2">
+		<div class="square2 td-instant" tabindex="0">instant<p class="duration">0ms</p>
+		</div>
+		<div class="square2 td-speedy" tabindex="0">speedy<p class="duration">200ms</p>
+		</div>
+		<div class="square2 td-middling" tabindex="0">middling<p class="duration">800ms</p>
+		</div>
+		<div class="square2 td-glacial" tabindex="0">glacial<p class="duration">5000ms</p>
+		</div>
+	</div>
 
-    <h2>FUNCIÓN DE TIEMPO DE TRANSICIÓN <h2>
-    <div class="square3 ttf-linear" tabindex="0">linear</div>
-    <div class="square3 ttf-ease" tabindex="0">ease</div>
-    <div class="square3 ttf-ease-in" tabindex="0">ease-in</div>
-    <div class="square3 ttf-ease-out" tabindex="0">ease-out</div>
-    <div class="square3 ttf-ease-in-out" tabindex="0">ease-in-out</div>
-    <div class="square3 ttf-steps" tabindex="0">steps</div>
-    <div class="square3 ttf-cubic" tabindex="0">cubic</div>
+	<h2>FUNCIÓN DE TIEMPO DE TRANSICIÓN <h2>
+	<div class="square3 ttf-linear" tabindex="0">linear</div>
+	<div class="square3 ttf-ease" tabindex="0">ease</div>
+	<div class="square3 ttf-ease-in" tabindex="0">ease-in</div>
+	<div class="square3 ttf-ease-out" tabindex="0">ease-out</div>
+	<div class="square3 ttf-ease-in-out" tabindex="0">ease-in-out</div>
+	<div class="square3 ttf-steps" tabindex="0">steps</div>
+	<div class="square3 ttf-cubic" tabindex="0">cubic</div>
 
 
-    <h2>RETRASO DE TRANSICION</h2>
-    <p>Esta propiedad es util para transiciones escalonadas que se logran estableciendo un <code>transition-delay</code> mas largo para cada elemento pósterior de un grupo.</p>
+	<h2>RETRASO DE TRANSICION</h2>
+	<p>Esta propiedad es util para transiciones escalonadas que se logran estableciendo un <code>transition-delay</code> mas largo para cada elemento pósterior de un grupo.</p>
 
-    <div class="wrapper3" tabindex="0">
-        <p>Hover to show menu</p>
-        <div class="menu-item">Menu item 1</div>
-        <div class="menu-item">Menu item 2</div>
-        <div class="menu-item">Menu item 3</div>
-        <div class="menu-item">Menu item 4</div>
-        <div class="menu-item">Menu item 5</div>
-    </div>
+	<div class="wrapper3" tabindex="0">
+		<p>Hover to show menu</p>
+		<div class="menu-item">Menu item 1</div>
+		<div class="menu-item">Menu item 2</div>
+		<div class="menu-item">Menu item 3</div>
+		<div class="menu-item">Menu item 4</div>
+		<div class="menu-item">Menu item 5</div>
+	</div>
 
-    <h2>TRANSFORMACION</h2>
-    <div>
-        <p>Transition ❌</p>
-        <div class="square4" tabindex="0"></div>
-    </div>
-    <div>
-        <p>Transition ✔️</p>
-        <div class="square4 has-transition2" tabindex="0"></div>
-    </div>
+	<h2>TRANSFORMACION</h2>
+	<div>
+		<p>Transition ❌</p>
+		<div class="square4" tabindex="0"></div>
+	</div>
+	<div>
+		<p>Transition ✔️</p>
+		<div class="square4 has-transition2" tabindex="0"></div>
+	</div>
 
-    <h2>SOMBRAS</h2>
-    <div class="wrapper4">
-        <div class="square5" tabindex="0">😐</div>
-        <div class="square5" tabindex="0">🙂</div>
-        <div class="square5" tabindex="0">😄</div>
-    </div>
+	<h2>SOMBRAS</h2>
+	<div class="wrapper4">
+		<div class="square5" tabindex="0">😐</div>
+		<div class="square5" tabindex="0">🙂</div>
+		<div class="square5" tabindex="0">😄</div>
+	</div>
 
-    <script>
-        const checkbox = document.querySelector("input");
-            const button = document.querySelector("button");
-            const square = document.querySelector(".square");
+	<H2>FILTROS</H2>
+	<div class="wrapper5">
+		<div class="emoji" tabindex="0">🐶</div>
+		<div class="emoji" tabindex="0">🐱</div>
+		<div class="emoji" tabindex="0">🐢</div>
+	</div>
+	<h2>DIFERENTES TRANSICIONES DE ENTRADA O SALIDA</h2>
+	<div class="wrapper6">
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+		<div class="bubble" tabindex="0"></div>
+	</div>
 
-            checkbox.addEventListener("change", ({ target }) => {
-                if (checkbox.checked) {
-                    square.classList.add("has-transition");
-                } else {
-                    square.classList.remove("has-transition");
-                }
-            });
+	<script>
+		const checkbox = document.querySelector("input");
+			const button = document.querySelector("button");
+			const square = document.querySelector(".square");
 
-    </script>
+			checkbox.addEventListener("change", ({ target }) => {
+				if (checkbox.checked) {
+					square.classList.add("has-transition");
+				} else {
+					square.classList.remove("has-transition");
+				}
+			});
+
+	</script>
 </body>
 </html>
