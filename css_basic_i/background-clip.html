@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>background-clip</title>
+
+	<style>
+		/*  border-box  */
+		.border-box-example {
+			background-color: lightblue;
+			background-clip: border-box;
+			border: 5px solid black;
+			padding: 20px;
+		}
+
+		/* padding-box */
+		.padding-box-example {
+			background-color: lightgreen;
+			background-clip: padding-box;
+			border: 5px solid black;
+			padding: 20px;
+		}
+
+		/* content-box */
+		.content-box-example {
+			background-color: lightcoral;
+			background-clip: content-box;
+			border: 5px solid black;
+			padding: 20px;
+		}
+
+		/* text */
+		.text-example {
+			/* background: linear-gradient(to right, lightblue, lightgreen); */
+			background-image: url("https://images.unsplash.com/photo-1567095761054-7a02e69e5c43?auto=format&fit=crop&w=690&q=80");
+			background-size: contain;
+			-webkit-background-clip: text;
+			color: transparent;
+			font-size: 6em;
+			font-weight: bold;
+			margin: 10px;
+		}
+
+		/* multiple backgrounds */
+		#demoBox {
+			aspect-ratio: 1/1;
+			border: 0.5px solid hsla(0deg, 0%, 60%, 0.5);
+			width: 100%;
+			border: 1px solid hsla(0deg, 0%, 40%, 0.25);
+			padding: 1rem;
+			background-image: url("https://assets.codepen.io/7518/pngaaa.com-1272986.png"),
+				url("https://assets.codepen.io/7518/blob.svg"),
+				linear-gradient(hsl(191deg, 40%, 86%), hsla(191deg, 96%, 96%, 0.5));
+			background-size: contain, cover, auto;
+			background-repeat: no-repeat, no-repeat, no-repeat;
+			background-position: 50% 50%, 10% 50%;
+			background-origin: padding-box, border-box, content-box;
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="border-box-example">Texto de ejemplo:border-box</div>
+	<br>
+	<div class="padding-box-example">Texto de ejemplo:padding-box</div>
+	<br>
+	<div class="content-box-example">Texto de ejemplo:content-box</div>
+	<br>
+	<div class="text-example">Texto de ejemplo:text</div>
+
+	<div class="wrapper">
+		<h2>Styling a CSS box with multiple backgrounds</h2>
+
+		<div id="demoAndCodeSnippetBox">
+			<div id="demoBox"></div>
+			<div id="keywordPanel" class="configuration-panel">
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

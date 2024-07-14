@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		#textContent p {
+			max-width: 100%;
+			font-family: "Google Sans Text", "Google Sans", Roboto, Helvetica, sans-serif;
+			line-height: 1.4;
+		}
+
+		#textContent p+p {
+			margin-top: 1rem;
+		}
+
+		#demoBox {
+			position: relative;
+			aspect-ratio: 16/9;
+			border: 0.5px solid hsla(0deg, 0%, 60%, 0.5);
+			width: 100%;
+			border: 1px solid hsla(0deg, 0%, 40%, 0.25);
+			padding: 1rem;
+			/* have background-size be within reason within the bounds of box but still allow regular tiling to occur on applicable images */
+			background-image: url("https://images.unsplash.com/photo-1529673203658-56306382b724?auto=format&fit=crop&w=1000&q=80&ar=16:9");
+			background-size: cover;
+			background-attachment: local;
+			overflow: auto;
+		}
+
+		#overlay {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+
+			width: 100%;
+			height: max-content;
+			background: hsla(0deg, 0%, 0%, 0.8);
+			padding: 2rem;
+			color: white;
+			line-height: 1.7;
+		}
+
+		#overlay h2 {
+			margin-bottom: 1.25rem;
+			color: hsl(236, 53%, 48%);
+		}
+
+		#overlay p+p {
+			margin-top: 2rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<h2>Using <code>background-attachment: local</code> on a background image</h2>
+		<figure id="demoCallout" class="callout">
+			<p><code>background-attachment: local</code> is applied to the CSS box with a background image. Background
+				images now move along the space they occupy.</p>
+		</figure>
+		<div id="demoAndCodeSnippetBox">
+
+			<div id="demoBox">
+				<div id="overlay">
+					<h2>Some Additional Content</h2>
+					<p>
+						Powder caramels sweet lemon drops dragée shortbread lemon drops wafer. Bonbon apple pie cookie
+						caramels soufflé chocolate. Jujubes chupa chups marzipan sweet sesame snaps cake sesame snaps
+						pie
+						icing. Chupa chups macaroon cotton candy danish bear claw candy. Cake brownie dessert halvah
+						carrot
+						cake liquorice cotton candy wafer. Candy canes marzipan ice cream apple pie gummies cheesecake
+						candy
+						canes cookie. Apple pie bonbon chocolate bar muffin sweet sesame snaps. Jelly liquorice lemon
+						drops
+						bonbon carrot cake lemon drops gummies caramels tootsie roll. Lollipop jelly-o cookie brownie
+						tootsie roll sweet roll oat cake sweet. Dragée marshmallow fruitcake brownie pudding powder tart
+						apple pie shortbread. Pie gummi bears candy canes cupcake powder shortbread. Cake toffee bear
+						claw
+						caramels cake shortbread halvah pie cheesecake.
+					</p>
+
+					<p>
+						Marshmallow powder tart icing donut donut chocolate cake gummi bears halvah. Gingerbread
+						gingerbread
+						donut dragée sweet roll tootsie roll soufflé soufflé. Cotton candy lollipop tiramisu jelly candy
+						tootsie roll. Cupcake cake brownie fruitcake marzipan tootsie roll. Fruitcake icing lollipop
+						chupa
+						chups tart. Cake tootsie roll gummi bears chocolate gummi bears sesame snaps lemon drops gummi
+						bears. Halvah cotton candy oat cake soufflé biscuit marzipan gummi bears pudding. Tiramisu
+						brownie
+						pie marzipan cupcake carrot cake ice cream chocolate bar. Jelly dragée cotton candy icing powder
+						croissant. Candy apple pie chocolate bar chocolate pudding chocolate bar tart. Shortbread bear
+						claw
+						jelly beans pudding toffee donut wafer cupcake. Sugar plum halvah toffee marzipan jelly beans
+						bonbon
+						lollipop. Cake cupcake jujubes pastry danish muffin donut.
+					</p>
+
+				</div>
+			</div>
+			<div id="textContent">
+
+				<p>
+					Croissant cotton candy apple pie cheesecake cake. Chocolate cake carrot cake cupcake tart jelly-o
+					croissant tiramisu biscuit pie. Tart danish danish danish tart icing chocolate chupa chups. Chupa
+					chups
+					caramels gummi bears jujubes biscuit cheesecake cheesecake. Chocolate marzipan danish shortbread
+					fruitcake jelly beans macaroon tootsie roll candy. Candy canes jelly-o topping jujubes lollipop
+					gummies
+					apple pie lollipop fruitcake.</p>
+
+				<p>
+					Shortbread marshmallow jelly-o fruitcake lemon drops sweet roll pudding. Pastry muffin marzipan cake
+					toffee candy canes tiramisu. Liquorice bear claw wafer topping tootsie roll chocolate bar bear claw.
+					Danish chocolate jelly jelly-o powder. Chupa chups bonbon powder tart powder oat cake wafer. Powder
+					sesame snaps toffee chocolate dessert marshmallow cookie marshmallow chupa chups. Croissant cake
+					gummi
+					bears pastry gummi bears gummi bears lemon drops cheesecake cake. Liquorice pie pudding chocolate
+					dragée
+					wafer cupcake. Liquorice wafer brownie topping lollipop jelly. Candy canes carrot cake chocolate bar
+					gummi bears lemon drops marshmallow soufflé fruitcake.</p>
+
+				<p>
+					Bear claw bear claw candy tootsie roll topping marzipan biscuit. Chocolate cake ice cream macaroon
+					powder chocolate cotton candy cookie lollipop. Ice cream chocolate cake sugar plum brownie
+					marshmallow
+					wafer icing. Jelly donut lollipop macaroon sweet sweet apple pie toffee sesame snaps. Tootsie roll
+					toffee chupa chups dragée tootsie roll cake. Fruitcake lemon drops pie gingerbread chocolate bar
+					cheesecake. Chocolate cake marzipan gummies pie macaroon sugar plum carrot cake marshmallow sesame
+					snaps. Fruitcake jelly beans lemon drops bonbon muffin toffee fruitcake carrot cake. Sesame snaps
+					shortbread jujubes lollipop caramels tootsie roll. </p>
+
+				<p>
+					Pastry jelly-o sweet jelly-o jelly muffin. Gingerbread powder chocolate chocolate fruitcake cake pie
+					danish. Fruitcake sweet lemon drops icing oat cake muffin shortbread cupcake. Bonbon gingerbread
+					marshmallow cake icing ice cream. Shortbread topping candy canes soufflé tart dessert cupcake sugar
+					plum
+					pastry. Tootsie roll danish liquorice macaroon candy canes sesame snaps. Lollipop lollipop tootsie
+					roll
+					marshmallow candy.</p>
+
+				<p>
+					Sesame snaps shortbread muffin tiramisu carrot cake wafer liquorice. Macaroon toffee marzipan toffee
+					marshmallow tootsie roll pudding chupa chups bear claw. Dessert cupcake chocolate cookie soufflé.
+					Sweet
+					sweet roll oat cake candy brownie ice cream donut. Sesame snaps icing marshmallow lollipop dragée.
+					Cotton candy gummies gummi bears topping sweet marzipan croissant gummi bears sesame snaps. Candy
+					canes
+					liquorice wafer donut soufflé chupa chups. </p>
+
+				<p>
+					Topping sugar plum fruitcake gingerbread chocolate marshmallow bear claw soufflé shortbread. Tart
+					danish
+					cupcake tiramisu dessert bonbon. Croissant jelly beans toffee cotton candy bear claw donut
+					croissant.
+					Cupcake sweet biscuit icing cookie. Soufflé soufflé candy canes cotton candy oat cake lemon drops
+					icing.
+					Soufflé bonbon danish gingerbread sugar plum. Lemon drops pudding soufflé topping tootsie roll
+					halvah
+					dessert jelly. Soufflé cookie sweet cheesecake chupa chups fruitcake soufflé. </p>
+
+				<p>
+					Brownie cookie tiramisu lemon drops cotton candy cookie. Jelly-o cotton candy jelly beans jelly
+					beans
+					jujubes caramels toffee. Jelly carrot cake marzipan bonbon candy canes oat cake. Cake candy canes
+					bonbon
+					chupa chups jelly chocolate bar wafer dessert. Gummies bear claw lollipop cupcake marshmallow. Oat
+					cake
+					toffee pastry apple pie topping. Bear claw bonbon marshmallow cupcake apple pie wafer jelly beans
+					tootsie roll soufflé. </p>
+
+				<p>
+					Caramels toffee candy canes soufflé toffee cake. Shortbread tiramisu brownie powder oat cake
+					cheesecake
+					chocolate cake. Croissant icing fruitcake liquorice sweet roll. Caramels danish pastry topping
+					topping
+					marshmallow danish bonbon cookie. Candy gummi bears jelly beans wafer chocolate cake tiramisu sweet
+					gingerbread. Sweet roll sesame snaps cookie candy gummies lemon drops. Topping jelly candy canes
+					pastry
+					halvah pastry. Soufflé marshmallow tiramisu lollipop pastry. </p>
+
+				<p>
+					Icing tart chocolate bar jujubes candy jujubes. Chocolate bar ice cream candy canes pastry sugar
+					plum
+					cotton candy ice cream. Pudding chupa chups cookie candy wafer sesame snaps dragée sweet pudding.
+					Macaroon lollipop pie bonbon chocolate jelly icing muffin. Tart cake bear claw tootsie roll candy
+					toffee. Biscuit liquorice sweet tart jelly beans icing. Macaroon lemon drops powder lemon drops
+					halvah.
+					Jelly beans donut sugar plum chocolate candy topping marshmallow sesame snaps chupa chups. </p>
+
+				<p>
+					Pudding jelly-o pudding cake muffin dragée lemon drops. Jelly beans tootsie roll bear claw cookie
+					apple
+					pie marshmallow cookie bonbon. Powder danish biscuit sweet apple pie. Toffee oat cake tiramisu gummi
+					bears chocolate cake croissant chocolate bar. Fruitcake cotton candy ice cream cake icing. Cake
+					biscuit
+					jelly sesame snaps jelly-o chocolate bar macaroon. Macaroon marshmallow gingerbread marshmallow
+					chocolate cake jujubes. Wafer oat cake cheesecake cotton candy powder gingerbread cake sweet
+					shortbread.
+					Sugar plum toffee croissant liquorice gummies cookie donut jujubes ice cream. </p>
+
+				<p>
+					Halvah gummies sesame snaps marzipan jelly beans cotton candy lollipop halvah bonbon. Marzipan
+					biscuit
+					tiramisu powder carrot cake tootsie roll. Topping cookie bonbon donut gingerbread cupcake cake
+					cheesecake. Macaroon jujubes ice cream marzipan cookie bear claw. Bonbon macaroon liquorice cotton
+					candy
+					carrot cake. Caramels chocolate cake marshmallow halvah marshmallow. </p>
+
+				<p>
+					Sugar plum icing chocolate ice cream shortbread jujubes sesame snaps chupa chups cotton candy. Cake
+					jelly-o toffee tart soufflé pudding chupa chups bonbon. Cheesecake croissant dessert chocolate cake
+					fruitcake caramels. Gingerbread cookie sesame snaps jujubes bear claw lemon drops candy canes
+					dessert.
+					Jelly chupa chups tootsie roll apple pie shortbread. Sesame snaps jelly jujubes jelly brownie powder
+					gummies chocolate cake. Tiramisu powder toffee pastry jelly cheesecake chocolate cake. Gingerbread
+					lemon
+					drops topping chocolate jujubes muffin topping soufflé. </p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

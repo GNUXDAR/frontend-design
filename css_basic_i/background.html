@@ -1,0 +1,222 @@
+<!DOCTYPE>
+<html lang="" es>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		.img1 {
+			width: 250px;
+			height: 250px;
+			background-color: rgb(139, 245, 245);
+			/* float: left; */
+		}
+
+		.img2 {
+			width: 250px;
+			@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap");
+			background: url("https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80");
+			background-size: 250px;
+			padding: 5px;
+			border-radius: 10px;
+		}
+
+		/* fondos con gradiaente */
+		.demo-box {
+			border: 0.5px solid hsla(0deg, 0%, 60%, 0.5);
+			aspect-ratio: 1/1;
+			/* La relación de aspecto es la proporción entre el ancho y la altura del elemento. Se expresa como dos números separados por dos puntos, por ejemplo, 1:1, 16:9 o 4:3. */
+			width: 250px;
+		}
+
+		.linear-gradient {
+			background-image: linear-gradient(rebeccapurple, teal);
+		}
+
+		.radial-gradient {
+			background-image: radial-gradient(teal, rebeccapurple);
+		}
+
+		.conic-gradient {
+			background-image: conic-gradient(rebeccapurple, teal, green, blue, purple);
+		}
+
+		/* posicion de fondo */
+		.top {
+			background-position: top;
+		}
+
+		.bottom {
+			background-position: bottom;
+		}
+
+		.center {
+			background-position: center;
+		}
+
+		.left {
+			background-position: left;
+		}
+
+		.right {
+			background-position: right;
+		}
+
+		.top-left {
+			background-position: top left;
+		}
+
+		.top-right {
+			background-position: top right; 
+		}
+
+		.center-left {
+			background-position: center left;
+		}
+
+		.center-right {
+			background-position: center right;
+		}
+
+		.bottom-left {
+			background-position: bottom left;
+		}
+
+		.bottom-right {
+			background-position: bottom right;
+		}
+
+		#containerOfDemoBoxes {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr 1fr;
+			grid-gap: 2.5%;
+			margin: 2rem 0;
+			width: 100%;
+		}
+
+		.demo {
+			display: flex;
+			flex-flow: column nowrap;
+		}
+
+		.demo-label {
+			display: block;
+			margin-top: 0.5rem;
+			font-size: 0.825rem;
+			color: hsl(0, 0%, 38%);
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<h1>Backgrounds</h1>
+	<div class="img1">
+		<code>rgb(139, 245, 245)</code>
+	</div>
+
+	<h2>Imagenes de Fondo</h2>
+	<div class="img2">
+		<span>imagen de fondo</span>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit laudantium reiciendis atque quae maxime saepe
+			tenetur architecto quia. Velit doloribus soluta tempore, asperiores nihil ducimus illum nam? Quo, a velit.
+		</p>
+	</div>
+
+	<h2>Fondos con gradiantes</h2>
+	<div id="containerOfDemoBoxes">
+
+		<div class="demo">
+			<div id="box1" class="demo-box linear-gradient"></div>
+			<span class="demo-label">Linear gradient</span>
+		</div>
+
+		<div class="demo">
+			<div id="box2" class="demo-box radial-gradient"></div>
+			<span class="demo-label">Radial gradient</span>
+		</div>
+
+		<div class="demo">
+			<div id="box3" class="demo-box conic-gradient"></div>
+			<span class="demo-label">Conic gradient</span>
+		</div>
+	</div>
+
+	<h2>Posicion de fondo</h2>
+	<div class="wrapper">
+		<h2>Positioning a background image with a keyword</h2>
+		<figure id="demoCallout" class="callout">
+			<p>Puede colocar una imagen de fondo sin valores utilizando una de las palabras clave predefinidas que acepte la propiedad
+				<code>background-position</code>&nbsp;,&nbsp; <code>top</code>&nbsp;,&nbsp;<code>bottom</code>,
+				<code>left</code> o <code>right</code>. Aca unos ejemplos.</p>
+		</figure>
+		<div id="containerOfDemoBoxes">
+	
+			<div class="demo">
+				<div class="demo-box top"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Top</span>
+			</div>
+	
+			<div class="demo">
+				<div class="demo-box bottom"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Bottom</span>
+			</div>
+	
+			<div class="demo">
+				<div class="demo-box center"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Center</span>
+			</div>
+	
+			<div class="demo">
+				<div class="demo-box left"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Left</span>
+			</div>
+	
+			<div class="demo">
+				<div class="demo-box right"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Right</span>
+			</div>
+	
+			<div class="demo">
+				<div class="demo-box top-left"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Top-left (default)</span>
+			</div>
+	
+	
+			<div class="demo">
+				<div class="demo-box top-right"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Top-right</span>
+			</div>
+	
+	
+			<div class="demo">
+				<div class="demo-box center-left"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Center-left</span>
+			</div>
+	
+	
+			<div class="demo">
+				<div class="demo-box center-right"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Center-right</span>
+			</div>
+	
+	
+			<div class="demo">
+				<div class="demo-box bottom-left"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Bottom-left</span>
+			</div>
+	
+	
+			<div class="demo">
+				<div class="demo-box bottom-right"><img src="https://images.unsplash.com/photo-1536707076730-0615b7f5b49a?auto=format&fit=crop&w=3034&q=80" width="40%" alt=""></div>
+				<span class="demo-label">Bottom-right</span>
+			</div>
+		</div>
+	</div>
+
+	<h2>Tamaño del fondo</h2>
+	
+</body>
+
+</html>

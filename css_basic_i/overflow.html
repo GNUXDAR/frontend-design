@@ -1,0 +1,64 @@
+<!DOCTYPE<
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Overflow</title>
+
+		<style>
+			.box {
+				width: 15vw;
+				height: 20vh;
+			}
+
+			.scroll {
+				overflow: scroll;
+			}
+
+			.clip {
+				overflow: clip;
+			}
+
+			.ellipsis p, .ellipsis h1 {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;   
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Overflow</h1>
+		<div class="box visible">
+			<h1>visible</h1>
+			<p>Carrot cake dessert jujubes gummi bears gingerbread cookie fruitcake. Croissant soufflé lemon drops lemon drops
+				jelly beans jelly beans tart. Jelly-o bonbon fruitcake chocolate cake marshmallow chocolate.</p>
+			<p>Ice cream soufflé cake sweet roll pastry sesame snaps apple pie. Fruitcake gingerbread cookie macaroon toffee.
+				Chocolate cake ice cream marzipan shortbread macaroon icing toffee pie. Soufflé croissant apple pie jujubes
+				tootsie roll croissant tootsie roll bonbon chocolate cake.</p>
+		</div>
+		<div class="box scroll">
+			<h1>scroll</h1>
+			<p>Carrot cake dessert jujubes gummi bears gingerbread cookie fruitcake. Croissant soufflé lemon drops lemon drops
+				jelly beans jelly beans tart. Jelly-o bonbon fruitcake chocolate cake marshmallow chocolate.</p>
+			<p>Ice cream soufflé cake sweet roll pastry sesame snaps apple pie. Fruitcake gingerbread cookie macaroon toffee.
+				Chocolate cake ice cream marzipan shortbread macaroon icing toffee pie. Soufflé croissant apple pie jujubes
+				tootsie roll croissant tootsie roll bonbon chocolate cake.</p>
+		</div>
+		<div class="box clip">
+			<h1>clip</h1>
+			<p>Carrot cake dessert jujubes gummi bears gingerbread cookie fruitcake. Croissant soufflé lemon drops lemon drops
+				jelly beans jelly beans tart. Jelly-o bonbon fruitcake chocolate cake marshmallow chocolate.</p>
+			<p>Ice cream soufflé cake sweet roll pastry sesame snaps apple pie. Fruitcake gingerbread cookie macaroon toffee.
+				Chocolate cake ice cream marzipan shortbread macaroon icing toffee pie. Soufflé croissant apple pie jujubes
+				tootsie roll croissant tootsie roll bonbon chocolate cake.</p>
+		</div>
+		<div class="box ellipsis">
+			<h1>ellipsis</h1>
+			<p>Carrot cake dessert jujubes gummi bears gingerbread cookie fruitcake. Croissant soufflé lemon drops lemon drops
+				jelly beans jelly beans tart. Jelly-o bonbon fruitcake chocolate cake marshmallow chocolate.</p>
+			<p>Ice cream soufflé cake sweet roll pastry sesame snaps apple pie. Fruitcake gingerbread cookie macaroon toffee.
+				Chocolate cake ice cream marzipan shortbread macaroon icing toffee pie. Soufflé croissant apple pie jujubes
+				tootsie roll croissant tootsie roll bonbon chocolate cake.</p>
+		</div>
+	</body>
+</html>
