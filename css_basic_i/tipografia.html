@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		span {
+			color: brown;
+			font-size: 12px;
+		}
+	</style>
+</head>
+
+<body>
+	<h2>La regla @font-face</h2>
+	<p>
+		Esta regla de CSS es fundamental en el diseño web, te permite especificar y usar fuentes personalizadas para
+		mostrar texto. te permite obtener fuentes
+		desde un servidor remoto o desde una fuente instalada en el dispositivo del usuario
+	</p>
+	<strong>Sintaxis</strong>
+	<pre>
+		<code>
+			@font-face {
+				font-family: "Trickster";
+				src:
+					local("Trickster"),
+					url("trickster-COLRv1.otf") format("opentype") tech(color-COLRv1),
+					url("trickster-outline.otf") format("opentype"),
+					url("trickster-outline.woff") format("woff")
+			}
+		</code>
+	</pre>
+
+	<span>Continuara</span>
+</body>
+
+</html>
