@@ -1,0 +1,14 @@
+<label for="gender">Gender: </label>
+<input type="radio" name="gender" value="Male" checked="checked">Male
+<input type="radio" name="gender" value="Female">Female
+
+<script>
+		const radios = document.getElementsByName('gender');
+
+for (var i = 0; i <  radios.length; i++) {
+	if (radios[i].checked) {
+		console.log(radios[i].value);
+		break;
+	}
+}
+</script>

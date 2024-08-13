@@ -1,0 +1,164 @@
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<!-- <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"> -->
+	<meta name="robots" content="no index,no follow">
+	<link rel="stylesheet" type="text/css" href="templates/themes/breeze.css">
+	<script language=JavaScript type=text/javascript>
+<!--
+function reset_file(current_form){
+var temp_array = new Array()
+for(var ctr = 0 ; ctr < current_form.length; ctr++){
+if(current_form[ctr].type == "text") temp_array[ctr] = current_form[ctr].value
+else if(current_form[ctr].type == "checkbox") temp_array[ctr] = current_form[ctr].checked
+else temp_array[ctr] = "empty"
+}
+current_form.reset()
+for(var ctr = 0 ; ctr < current_form.length; ctr++){
+if(current_form[ctr].type == "text") current_form[ctr].value = temp_array[ctr]
+else if(current_form[ctr].type == "checkbox")current_form[ctr].checked = temp_array[ctr]
+}
+
+}
+
+
+function check_file(current_form){
+// si esta vacio permitimos enviar el formulario
+var msg = ""
+if(current_form.file1.value.search(/\S/g) == -1){
+alert("Mensaje si el campo esta vacio");
+return false
+}
+// extraemos el nombre del archivo y la extension
+var file2 = current_form.file1.value.match(/[^\\]+\.mp3$/i)
+
+// la extension de archivo es valida
+if(file2 != null){
+// Extraemos el nombre del archivo
+file2 = file2.toString().replace(/\.mp3/i,"")
+// comprueba que tenga solo tres guiones
+
+if((file2.split("-")).length == 1 ? 0: (file2.split("-")).length == 4 ? 0 : 1){
+msg+=" - Solo se permiten 3 guiones.\n"
+}
+/*comprueba si existe un caracter no valido, en este caso son válidos los caracteres
+alfanumericos _- !¡ & y espacios, si por ejemplo quieres añadir otro caracter como
+valido solo debes añadirlo dentro de la varible msk_char entre los simbolos [], si
+por ejemplo añades el signo + como valido te daría error porque es un simbolo utilizado
+en las expresiones regulares, para que no de error solo debes enmascararlo con una barra de escape \+ */
+var msk_char = /[^a-záéíóúñ_\-\s\d&\(\)\!\¡]/ig
+if(msk_char.test(file2)){
+var no_char = file2.match(msk_char)
+var msg_char =""
+for(var ctr = 0,lg = no_char == null? 0: no_char.length;ctr < lg ;ctr++) msg_char +=(msg_char.indexOf(no_char[ctr])!= -1 ? "":" "+ no_char[ctr])
+msg+=(no_char == null ? "" : (msg_char.length > 3 ? " - Se han encontrado los siguientes caracteres no válidos: " : " - Se ha encontrado el siguiente caracter no valido: ")+ msg_char +"\t \n")
+}
+// controla el formato de la cadena
+// para permitir solo dos numeros \d\d o \d
+// para permitir solo un numero \d o \d
+// para permitir entre uno y dos \d
+if(!(/^.+-.+-\(\d\)-.+$/i).test(file2)){
+msg+= " - El formato debe ser el siguiente: Grupo-Disco-(10)-Cancion\t\n"
+}
+}
+
+else msg+="\nSolo son validos los archivos con la extensión mp3.\t\n"
+
+//Si el mensaje no esta vacio
+if(msg!=""){
+file2 == null ? alert(msg) :alert("\nNO ES VÁLIDO EL NOMBRE \n\n" + file2+ " \n\n" + msg + "\nPor favor, renombre el archivo.\n")
+reset_file(current_form)
+return false
+}
+// esta todo bien
+else return true
+
+
+}
+
+
+//-->
+</script>
+
+
+</head>
+
+<body>
+
+
+
+	<p align="center"><b>Sistema de Envío de tus canciones.</b></p>
+	<p align="center">[Tamaño Máximo de archivo: 2MB]</p>
+	<p align="center">[Archivos permitidos: &nbsp;.mp3
+		]</p>
+	<p align="center">admin tienes 1 archivos enviados. Puedes enviar 3 archivos</p>
+
+	<div align="center">
+		<center>
+			<form method="POST" action="uploader.php?action=upload" enctype="multipart/form-data"
+				onsubmit="return check_file(this)">
+				<table border="0" width="600">
+					<tr>
+						<td>&nbsp;</td>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<td width="35%">
+							<p align="right"><b>E-Mail: </b>
+							</p>
+						</td>
+						<td width="65%">
+							<p align="left">
+								<input type="text" size="30" name="field_email" value="email@dir.com">
+							</p>
+						</td>
+					</tr>
+
+					<tr>
+						<td width="35%">
+							<p align="right"><b>Fichero a enviar: </b></p>
+						</td>
+						<td width="65%">
+							<p align="left"><input type="hidden" name="MAX_FILE_SIZE" value="">
+								<input type="file" size="30" name="file1" onchange="check_file(this.form)" />
+							</p>
+						</td>
+					</tr>
+
+
+
+
+					<tr>
+						<td width="35%">&nbsp;</td>
+						<td width="65%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2" width="100%"><input class="checktype" type="checkbox"
+								name="field_copy" value="Yes">Deseo recibir confirmación del envío</td>
+					</tr>
+					<tr>
+						<td width="35%">&nbsp;</td>
+						<td width="65%">&nbsp;</td>
+					</tr>
+					<tr>
+						<td align="center" colspan="2" width="100%"><input type="submit" name="field_submit"
+								value="Subir fichero(s)"></td>
+					</tr>
+					<tr>
+						<td width="35%">&nbsp;</td>
+						<td width="65%">&nbsp;</td>
+					</tr>
+				</table>
+			</form>
+		</center>
+	</div>
+	<p align="center">
+		<font size="1" face="verdana">
+		</font>
+	</p>
+
+
+</body>
+
+</html>
