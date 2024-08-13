@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Audio Visualizer with Controls</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			background-color: #282c34;
+			color: white;
+			font-family: Arial, sans-serif;
+		}
+
+		canvas {
+			border: 1px solid white;
+			margin-top: 20px;
+			background: rgba(0, 0, 0, 0.5);
+		}
+
+		#controls {
+			margin: 10px;
+		}
+
+		button {
+			margin: 5px;
+			padding: 10px;
+			font-size: 16px;
+			cursor: pointer;
+		}
+
+		input[type="range"] {
+			width: 300px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Audio Visualizer with Controls</h1>
+	<input type="file" id="audioFile" accept="audio/*">
+	<div id="controls">
+		<button id="playButton">Play</button>
+		<button id="pauseButton">Pause</button>
+		<button id="stopButton">Stop</button>
+		<input type="range" id="progressBar" value="0" max="100">
+	</div>
+	<canvas id="visualizer" width="800" height="200"></canvas>
+
+	<script>
+		const canvas = document.getElementById('visualizer');
+		const ctx = canvas.getContext('2d');
+		const audioFileInput = document.getElementById('audioFile');
+		const playButton = document.getElementById('playButton');
+		const pauseButton = document.getElementById('pauseButton');
+		const stopButton = document.getElementById('stopButton');
+		const progressBar = document.getElementById('progressBar');
+
+		let audioContext, audioSource, analyser, dataArray, bufferLength;
+		let audioBuffer, isPlaying = false, startTime = 0, pausedAt = 0;
+
+		function initAudioContext() {
+			audioContext = new (window.AudioContext || window.webkitAudioContext)();
+			analyser = audioContext.createAnalyser();
+			analyser.fftSize = 2048;
+			bufferLength = analyser.frequencyBinCount;
+			dataArray = new Uint8Array(bufferLength);
+		}
+
+		function connectAudioSource(buffer) {
+			audioBuffer = buffer;
+			audioSource = audioContext.createBufferSource();
+			audioSource.buffer = audioBuffer;
+			audioSource.connect(analyser);
+			analyser.connect(audioContext.destination);
+			audioSource.onended = () => stopAudio();
+			draw();
+		}
+
+		function playAudio() {
+			if (!isPlaying) {
+				audioSource = audioContext.createBufferSource();
+				audioSource.buffer = audioBuffer;
+				audioSource.connect(analyser);
+				analyser.connect(audioContext.destination);
+				audioSource.onended = () => stopAudio();
+				audioSource.start(0, pausedAt);
+				startTime = audioContext.currentTime - pausedAt;
+				isPlaying = true;
+			}
+		}
+
+		function pauseAudio() {
+			if (isPlaying) {
+				audioSource.stop();
+				pausedAt = audioContext.currentTime - startTime;
+				isPlaying = false;
+			}
+		}
+
+		function stopAudio() {
+			if (isPlaying) {
+				audioSource.stop();
+				pausedAt = 0;
+				isPlaying = false;
+			}
+		}
+
+		function draw() {
+			requestAnimationFrame(draw);
+			analyser.getByteFrequencyData(dataArray);
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			const barWidth = (canvas.width / bufferLength) * 8; // Incrementar el ancho de las barras
+			let barHeight;
+			let x = 0;
+			ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+			ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+			for (let i = 0; i < bufferLength; i++) {
+				barHeight = dataArray[i] / 2;
+				ctx.fillStyle = `rgb(0, 0, ${barHeight + 100})`; // Color azul para las barras
+				ctx.fillRect(x, canvas.height - barHeight, barWidth, barHeight);
+				x += barWidth + 1;
+			}
+
+			// Actualizar el progreso del audio
+			if (isPlaying) {
+				const elapsedTime = audioContext.currentTime - startTime;
+				const duration = audioBuffer.duration;
+				progressBar.value = (elapsedTime / duration) * 100;
+			} else {
+				progressBar.value = (pausedAt / audioBuffer.duration) * 100;
+			}
+		}
+
+		audioFileInput.addEventListener('change', (event) => {
+			if (event.target.files.length > 0) {
+				const file = event.target.files[0];
+				const reader = new FileReader();
+				reader.onload = (e) => {
+					initAudioContext();
+					audioContext.decodeAudioData(e.target.result, connectAudioSource);
+				};
+				reader.readAsArrayBuffer(file);
+			}
+		});
+
+		playButton.addEventListener('click', playAudio);
+		pauseButton.addEventListener('click', pauseAudio);
+		stopButton.addEventListener('click', stopAudio);
+
+		progressBar.addEventListener('input', (event) => {
+			const progress = event.target.value / 100;
+			if (isPlaying) {
+				audioSource.stop();
+				pausedAt = audioBuffer.duration * progress;
+				playAudio();
+			} else {
+				pausedAt = audioBuffer.duration * progress;
+			}
+		});
+	</script>
+</body>
+
+</html>

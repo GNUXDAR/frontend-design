@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>efecto 4 botones</title>
+</head>
+<style>
+  /*reseteamos todos los margenes*/
+  body{
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+  }
+  .centered-elements{
+    display: flex;/*hacemos los elementos flexibles*/
+    /*ahora vamos a centratr todos los elementos del contenedor*/
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 100vh;/*le damos el alto total de la pantalla*/
+    width: 100%;/*que ocupe todo el ancho*/
+  }
+  .content {
+    background-color: #434343;/*color de fondo*/
+  }
+  /* a todos los botones le damos las siguientes propiedades*/
+  .btn{
+    position: relative;
+    display: block;/*se colocan en bloke*/
+    height: 77px;/*alto*/
+    width: 300px;/*ancho*/
+    border-radius: 5px;/*redondeamos los bordes*/
+    color: #fff;/*color de letras*/
+    font-size: 18px;/*tamaño de fuente*/
+    overflow:hidden;/*ocultamos los elementos sobrantes especialmente en el ultimo btn*/
+    transition: all 500ms ease;
+    border: 2px solid #20e2d7;
+    background-color: transparent;/*fondo transpartente*/
+    margin-bottom: 40px;/*separamos 40pixeles desde abajo*/
+    z-index: 0;  
+    text-transform: uppercase;/*cambiamos a letras mayusculas*/
+    font-weight: 700;/*fuente mas ancha*/
+    cursor: pointer;/*cambia el cursor por la manito*/
+  }
+  /*utilizaremos before , son seudoelemntos que crea contenido por delante de un elemento*/
+  .btn::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    background-color: #20e2d7;/*color del contenido*/
+    transition: all 500ms ease;
+    z-index: -1;/*le damos un valor negativo para que no se superpongan los elementos creados*/
+  }
+  .btn--1::before{
+    width: 0;
+    height: 100%;
+  }
+  .btn--1:hover{
+    color: #434343;/*aqui solo cambiamos el color del contenido*/
+  }
+  /*al hacer hover vamos a activar la siguiente propiedad junto con el seudoelemnto creado*/
+  .btn--1:hover::before{
+    width:100% ;
+  }
+  /*al hacer hover activamos las siguientes propiedades del btn2*/
+  .btn--2:hover{
+    background-color: #20e2d7;/*cambiamos el color de fondo*/
+    box-shadow: 0 0 10px #20e2d7 , 0 0 20px #20e2d7 , 0 0 30px #20e2d7 ;/*le damos una sombra*/
+    color: #434343;/*cambiamos el color del texto para que se note mas*/
+  }
+  /*al hacer hover activamos las siguientes propiedades del btn 3*/
+  .btn--3:hover{
+    animation: shadow-pulse 1000ms;/*creamos una animacion que dure mil milisegundos*/
+    background-color: #20e2d7;/*color de fondo*/
+    color: #434343;/*color del texto*/
+
+  }
+  /*controlamos la animacion para que haga lo siguiente*/
+  @keyframes shadow-pulse {
+    0%{
+      box-shadow: 0 0 0 0 rgba(32,226,215, 0.6);
+    }
+    100%{
+      box-shadow: 0 0 8px 16px rgba(32,226,215, 0)
+    }
+  }
+  /*ahora vamos a crear el seudoelento del btn4 con las siguientes propiedades*/
+  .btn--4::before{
+    left: -400px;
+    right: 0;
+    width: 100%;
+    height: 150%;
+    box-shadow: 0 0 10px #20e2d7 , 0 0 20px #20e2d7;
+    transform: rotate(45deg);/*lo rotamos 45 grados*/
+    transition: all 1000ms ease;/*tiempo de transicion*/
+  }
+  /*ahora al hacer hover activamos el seudoelemnto*/
+  .btn--4:hover::before{
+    left :520px;/*lo movemos 520px*/
+  }
+</style>
+<body>
+  <div class="content centered-elements">
+    <div>
+      <button class="btn btn--1">
+          Pasar el raton
+      </button>
+      <button class="btn btn--2">
+        Pasar el raton
+    </button>
+    <button class="btn btn--3">
+      Pasar el raton
+  </button>
+  <button class="btn btn--4">
+    Pasar el raton
+</button>
+    </div>
+  </div>
+</body>
+</html>
