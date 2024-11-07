@@ -1,0 +1,201 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #ffffff;
+}
+
+.menu-section {
+    background-color: #fff;
+    width: auto; /*100%;*/
+    height: 167px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    /* position: fixed; */
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100%; */
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+
+/* search */
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-container input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-container button {
+    background-color: #0033a0;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* huincha */
+.ribbon {
+    background-color: #bd3b3b;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    position: relative;
+}
+
+.ribbon p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* banner.section */
+.banner-section {
+    width: 100%;
+    max-width: 100%;
+    height: 400px;
+    /* Altura deseada, puedes cambiarla según tus necesidades */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Estilos para las imágenes del banner */
+.banner-slide img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    width: auto; /*100%;**/
+    margin: 0 auto;
+}
+
+
+/* Estilos para la sección de las imágenes */
+.image-section {
+    width: 100%;
+    max-width: 93%;
+    /* height: 381.11541748046875px; */
+    position: relative;
+    top: 50px;
+    left: 44px;
+    display: block;
+    scroll-snap-type: x mandatory;
+    /* Habilitamos el desplazamiento lateral */
+    overflow-x: auto;
+    /* Por si falla el soporte del scroll-snap */
+    -webkit-overflow-scrolling: touch;
+    /* Hacemos el scroll más suave en iOS */
+}
+
+.image-section img {
+    width: calc(33.33% - 10px);
+    /* height: auto; */
+    object-fit: cover;
+    margin-right: 10px;
+    scroll-snap-align: start;
+    /* Establecemos el punto de alineación para el scroll-snap */
+}
+
+/* Para asegurar que la última imagen no tenga margen derecho */
+.image-section img:last-child {
+    margin-right: 0;
+}
+
+/* Estilos para el slider de productos */
+.product-slider {
+    max-width: 100%;
+    margin: 0 auto;
+    padding-top: 60px;
+}
+
+.product-item {
+    text-align: center;
+}
+
+/* Estilos responsivos */
+@media screen and (max-width: 768px) {
+    .menu-section {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .logo {
+        margin-bottom: 20px;
+    }
+
+    .logo img {
+        margin-right: 0;
+        /* Eliminar el espacio entre el logo y el menú en versión móvil */
+    }
+
+    nav {
+        margin-top: 20px;
+    }
+
+    .ribbon {
+        padding: 15px 0;
+    }
+
+    .image-section {
+        display: none;
+        /* En dispositivos móviles, mostramos las imágenes en una sola columna */
+        overflow-x: hidden;
+        /* Deshabilitamos el desplazamiento horizontal en dispositivos móviles */
+    }
+
+    .product-slider {
+        padding-top: 50px;
+        max-width: 65%; /* 93%;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .product-item {
+    text-align: center;
+}
+
+}
