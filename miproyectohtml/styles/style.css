@@ -1,0 +1,41 @@
+html {
+    background-color: #00539f;
+}
+
+
+body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #ff9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black
+}
+
+h1, h2 {
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+  font-variation-settings:
+    "ROND" 0;
+  margin: 0;
+  padding: 20px 0;
+}
+
+
+h2 {
+    font-size: 40px;
+}
+
+p, li {
+    font-size: 16px;
+    line-height: 2;
+    letter-spacing: 1px;
+}
+
+img {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+
