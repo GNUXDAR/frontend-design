@@ -1,47 +1,71 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-EC">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Arturo Cabrera">
+    <meta name="description" content="Tutorial sobre html, para aprender a desarrollar sitio web">
+    <link rel="icon" href="images/descarga.png" type="image/x-icon">
     <title>mi primer html</title>
 
+    <!-- CDN font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
 
+    <!-- stilos CSS -->
     <link rel="stylesheet" href="styles/style.css">
 
 </head>
 <body>
-    <h1>Logo de Firefox</h1>
-    <h2>subtitulos</h2>
-    <img src="images/descarga.png" alt="logo de firefox">
+    <h1>Serie de HTML</h1>
+    <p>
+        Es una serie de <em>HTML</em> donde vamos a aprender todo lo relacionado con este <strong>lenguaje</strong>.
+    </p>
+    
+    <h2 id="more-important">Los elementos mas importantes de HTML</h2>
+    <p>Los elementos mas importantes son:</p>
+    <ul>
+        <li>Titulos (&lt;h1&gt; á &lt;h6&gt;)</li>
+        <li>Parrafos (&lt;p&gt;)</li>
+        <li>Elementos vacios (&lt;img&gt;)</li>
+        <li>Listas Ordenadas (&lt;ol&gt;) </li>
+        <li>Listas Desordenadas (&lt;ul&gt;) </li>
+    </ul>
+    
+    <img src="images/descarga.png" alt="logo de firefox" title="El logo mas 'bonito' de firefox" width="150" height="150" />
 
-   <a href="#">HTML es fantastico</a>
+   <a href="https://google.com" title="El logo mas bonito de firefox">HTML es fantastico</a>
 
-   <p class="mytext" id="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, ut error. Cupiditate facilis vero, rerum voluptatibus aliquam, neque quaerat voluptatem perspiciatis placeat reiciendis sapiente accusamus, a mollitia nisi perferendis suscipit!</p>
+   <p class="mytext" id="text"><u>Lorem ipsum</u>, dolor sit amet consectetur adipisicing elit. Ipsum, ut error. Cupiditate facilis vero, rerum voluptatibus aliquam, neque quaerat voluptatem perspiciatis placeat reiciendis sapiente accusamus, a mollitia nisi perferendis suscipit!</p>
+
+   <p lang="en">This site is a practique of HTML</p>
 
    <p class="mytext">
     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat magnam sed consequuntur ducimus quo necessitatibus, sunt ea. Cupiditate minus inventore, dolore facilis eveniet fugiat eius cumque mollitia. Maiores, sed in.
    </p>
 
-   <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda molestias magnam officia quisquam dolorem itaque iure rem aliquid? Quae soluta doloremque sed magni, dignissimos at. Eos asperiores laborum tenetur sapiente.
-   </p>
+   <!-- Carlos: Aqui agregamos la imagen para las listas -->
 
-   <h2>Listas</h2>
+   <h2 id="my-list">Listas</h2>
    <ol>
     <li>Arturo</li>
     <li>Santiago</li>
     <li>Maria</li>
    </ol>
-
-   <ul>
     <li>limpiar del depa</li>
     <li>sacar la basura</li>
     <li>sacar a pasear al perro</li>
    </ul>
 
+   <input type="text" disabled>
 
+   <h2>Enlaces &lt;a&gt;</h2>
+   <!-- enlaces internos a la misma pagina -->
+   <a href="#more-important">Enlaces mas importante</a>
+   <address>
+    <a href="contacto.html">Contacto con Arturo Cabrera</a>
+   </address>
+   
 </body>
 </html>
