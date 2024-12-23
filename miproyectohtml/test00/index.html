@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Arturo Cabrera">
+        <meta name="description" content="Página de pruebas de la serie de html">
+        <title>Prueba/Repaso 00 de HTML</title>
+
+        <!--Icon de la pagina-->
+        <link rel="shortcut icon" href="images/goku.png" type="image/x-icon">
+        <!--estilos de la pagina-->
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+    <body>
+        <!--titulo principal-->
+        <h1>Repaso de <abbr title="Lenguaje Marcado de Hipertexto">HTML</abbr></h1>
+
+        <!--subtitulo-->
+        <h2>La practica hace al maestro</h2>
+
+        <!--imagen principal-->
+        <img src="images/goku.png" alt="goku pequeño con traje rojo" title="son goku">
+
+        <!--listas-->
+        <h3>Listas</h3>
+        <!--listas desordenadas-->
+        <ul>
+            <li><abbr title="Lenguaje Marcado de Hipertexto">HTML</abbr></li>
+            <li><abbr title="Hojas de estilos en cascadas">CSS</abbr></li>
+            <li><abbr title="Lenguaje de programacion JavaScript">JS</abbr></li>
+        </ul>
+
+        <!--listas ordenadas-->
+        <ol>
+            <li>Instalar un editor de texto</li>
+            <li>Instalar un navegador web</li>
+            <li>Seguirme en youtube para aprender desarrollo web <a href="https://youtube.com/user/gnuxdar" title="Mi Canal de youtube" target="_blank">gnuxdar</a> </li>
+        </ol>
+
+        <!--listas de descripcion-->
+        <dl>
+            <dt>HTML</dt>
+            <dd>Lenguaje para crear paginas web</dd>
+        </dl>
+        <dl>
+            <dt>CSS</dt>
+            <dd>Encargado de darle estilos y que se vean bien</dd>
+        </dl>
+        <dl>
+            <dt>JS</dt>
+            <dd>Lenguaje de programacion para darle dinamismo a las paginas</dd>
+        </dl>
+
+        <!--entidades-->
+        <h3>Entidades</h3>
+        <p>Algunos de los usos de entidades son los &lt; (menor que), &gt; (mayor que), &amp; (amspersand), &copy; (copyright)</p>
+
+        <!--superindices y subindices-->
+        <h3>Superindices y Subindices</h3>
+        <p>La formula del agua es H<sub>2</sub>0</p>
+        <p>El teorema de pitagoras es a<sup>2</sup> + b<sup>2</sup> = c<sup>2</sup></p>
+
+        <!--mostrar codigo-->
+        <h3>Fragmento de codigo</h3>
+        <pre>
+            <code>
+                &lt;html&gt;
+                    &lt;head&gt;
+                        &lt;meta&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h1&gt;Titulo Principal&lt;/h1&gt;
+                    &lt;/body&gt;
+                &lt;/html&gt;
+            </code>
+        </pre>
+
+        <!--uso de etiquetas del teclado-->
+        <h3>Etiqueta KBD</h3>
+        <p>Para copiar un texto, presione la tecla <kbd>Ctrl</kbd> + <kbd>c</kbd></p>
+        <p>Para pegar un texto, presione la tecla <kbd>Ctrl</kbd> + <kbd>v</kbd></p>
+
+        <!--etiqueta de ejemplo de salida de consola-->
+        <h3>Etiqueta SAMP</h3>
+        <p>Mensaje de error de sistema</p>
+        <samp>
+            ERROR 404: page not found
+        </samp>
+
+        <!--etiqueta de direccion-->
+        <h3>Etiqueta de direccion</h3>
+        <p>Puede ubicarme en la siguiente direccion</p>
+        <address>
+            <ul>
+                <li>Ecuador, Quito</li>
+                <li>Pichincha</li>
+            </ul>
+        </address>
+
+        <p>ó viajando por cualquier pais del continente, por eso sigueme en mis redes</p>
+
+        <p>En todas mis redes me consigues como <strong>GNUXDAR</strong></p>
+        <p>visita mi web <a href="https://arturocabrera.com">arturocabrera.com</a></p>
+
+    </body>
+</html>

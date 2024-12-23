@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Formateo de texto avanzado</title>
+</head>
+<body>
+    <h1>Formateo de texto avanzado</h1>
+    <h2>Listas de descripciones</h2>
+    
+    <dl>
+        <dt>¿Como se crea la cuenta?</dt>
+        <dd>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eveniet aperiam mollitia incidunt voluptas, temporibus, corrupti error repellendus asperiores tempore et ullam esse enim repudiandae perspiciatis eligendi, quasi vitae nihil!</dd>
+
+        <dt>¿Como se crea la cuenta?</dt>
+        <dd>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum eveniet aperiam mollitia incidunt voluptas, temporibus, corrupti error repellendus asperiores tempore et ullam esse enim repudiandae perspiciatis eligendi, quasi vitae nihil!</dd>
+    </dl>
+
+    <h2>Citas</h2>
+    <h3>Citas indepentientes</h3>
+    <blockquote cite="http://developer.mozila.org/path-de-la-pagina">
+        <p>
+            html es el lenguaje mas utilizado, donde se estructuran las paginas web. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium ad ipsum aut et sunt fuga ratione dolorem odio sapiente sed saepe tempora hic, quisquam soluta accusamus temporibus beatae pariatur cumque.
+            <a href="http://developer.mozila.org/path-de-la-pagina">
+                <cite>pagina de mozilla</cite>
+            </a>
+            
+        </p>
+    </blockquote>
+    <h3>Citas lineales</h3>
+    <q cite="http://developer.mozila.org/path-de-la-pagina">
+        son citas de una sola linea
+    </q>
+    <a href="http://developer.mozila.org/path-de-la-pagina">
+        <cite>pagina de mozilla</cite>
+    </a>
+
+    <h2>Abreviaciones</h2>
+    <abbr title="Lenguaje de marcado de hipertexto">HTML</abbr> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laudantium iusto molestiae, doloribus repudiandae blanditiis ducimus sit in! Nobis blanditiis iusto aliquam vitae quidem mollitia fugit ut delectus, laudantium pariatur sequi.
+
+    <h2>Información de contacto</h2>
+    &lt;address&gt;
+
+    <h2>Superindices y subindices</h2>
+    <p>Tenemos en 1<sup>er</sup> lugar a: </p>
+    <p>Tenemos en 2<sup>do</sup> lugar a:</p>
+
+    <p>El agua es muy vital para la vida y su formula quimica es H<sub>2</sub>O</p>
+
+    <h2>Codigo informatico</h2>
+    <code>
+        <pre>
+            var name = "Arturo Cabrera";
+            console.log(name);
+        </pre>
+    </code>
+    
+    <kbd></kbd>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius unde sequi voluptates quidem dolor? Nesciunt ullam, aperiam deleniti enim dignissimos corrupti itaque voluptate tempore veniam cupiditate consequatur totam, ipsa quasi. <kbd>Ctrl</kbd> + <kbd>c</kbd></p>
+
+    <samp>
+        PING mozilla.org (35.190.14.201) 56(84) bytes of data.
+        64 bytes from 201.14.190.35.bc.googleusercontent.com (35.190.14.201): icmp_seq=1 ttl=115 time=19.2 ms
+        64 bytes from 201.14.190.35.bc.googleusercontent.com (35.190.14.201): icmp_seq=2 ttl=115 time=17.5 ms
+        64 bytes from 201.14.190.35.bc.googleusercontent.com (35.190.14.201): icmp_seq=3 ttl=115 time=17.4 ms
+        64 bytes from 201.14.190.35.bc.googleusercontent.com (35.190.14.201): icmp_seq=4 ttl=115 time=20.1 ms
+        64 bytes from 201.14.190.35.bc.googleusercontent.com (35.190.14.201): icmp_seq=5 ttl=115 time=17.8 ms
+        64 bytes from 201.14.190.35.bc.googleusercontent.com (35.190.14.201): icmp_seq=6 ttl=115 time=23.6 ms
+    </samp>
+
+    <h2>Horas y fechas</h2>
+    <time datetime="2024-12-06">06 de diciembre de 2024</time><br>
+    <time datetime="2024-12">Diciembre de 2024</time><br>
+    <time datetime="2024-12-06T18:15">18:15 del 06 de Diciembre 2024</time><br>
+    <time datetime="18:15:02">18:15:02</time><br>
+</body>
+</html>
