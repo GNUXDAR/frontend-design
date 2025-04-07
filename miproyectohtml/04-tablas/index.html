@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+</head>
+<body>
+    <h1>Tablas en <abbr title="Lenguaje de Hipertexto Marcado">HTML</abbr></h1>
+    <table border="1">
+        <tr>
+            <th>&nbsp;</th>
+            <th colspan="2">Nombre</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Juan</td>
+            <td>Castro</td>
+            <td>25</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Maria</td>
+            <td>Gomez</td>
+            <td>19</td>
+        </tr>
+    </table>
+<hr>
+    <table border="1">
+        <colgroup>
+            <col />
+            <col style="background-color: blue;"/>
+            <col />
+            <col style="background-color: yellow;" />
+        </colgroup>
+        <tr>
+            <th rowspan="4">Abril</th>
+            <th>Lunes</th>
+            <th>Martes</th>
+            <th>Miercoles</th>
+            <th>Jueves</th>
+        </tr>
+        <tr>
+            <td>Ingles</td>
+            <td>Ciencias</td>
+            <td>Deporte</td>
+            <td>Deporte</td>
+        </tr>
+        <tr>
+            <td>Ingles</td>
+            <td>&nbsp;</td>
+            <td style="background-color: red;">Ciencias</td>
+            <td>Deporte</td>
+        </tr>
+        <tr>
+            <td>Ingles</td>
+            <td>Ciencias</td>
+            <td>&nbsp;</td>
+            <td>Ciencias</td>
+        </tr>
+    </table>
+</body>
+</html>
