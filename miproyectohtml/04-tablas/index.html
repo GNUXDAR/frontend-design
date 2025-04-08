@@ -8,11 +8,17 @@
 <body>
     <h1>Tablas en <abbr title="Lenguaje de Hipertexto Marcado">HTML</abbr></h1>
     <table border="1">
+      <caption>
+        Datos personales
+      </caption>
+      <thead>
         <tr>
             <th>&nbsp;</th>
             <th colspan="2">Nombre</th>
             <th>Edad</th>
         </tr>
+      </thead>
+      <tbody>
         <tr>
             <td>1</td>
             <td>Juan</td>
@@ -25,100 +31,53 @@
             <td>Gomez</td>
             <td>19</td>
         </tr>
+      </tbody>
+        
     </table>
 <hr>
     <table border="1">
+      <caption>
+        Horario de clases
+      </caption>
         <colgroup>
             <col />
             <col style="background-color: blue;"/>
             <col />
             <col style="background-color: yellow;" />
         </colgroup>
-        <tr>
+        <thead>
+          <tr>
             <th rowspan="4">Abril</th>
             <th>Lunes</th>
             <th>Martes</th>
             <th>Miercoles</th>
             <th>Jueves</th>
-        </tr>
-        <tr>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
             <td>Ingles</td>
             <td>Ciencias</td>
             <td>Deporte</td>
             <td>Deporte</td>
-        </tr>
-        <tr>
-            <td>Ingles</td>
-            <td>&nbsp;</td>
-            <td style="background-color: red;">Ciencias</td>
-            <td>Deporte</td>
-        </tr>
-        <tr>
-            <td>Ingles</td>
-            <td>Ciencias</td>
-            <td>&nbsp;</td>
-            <td>Ciencias</td>
-        </tr>
+          </tr>
+          <tr>
+              <td>Ingles</td>
+              <td>&nbsp;</td>
+              <td style="background-color: red;">Ciencias</td>
+              <td>Deporte</td>
+          </tr>
+          <tr>
+              <td>Ingles</td>
+              <td>Ciencias</td>
+              <td>&nbsp;</td>
+              <td>Ciencias</td>
+          </tr>
+        </tbody>
+        
     </table>
     <hr>
-    <table border="1">
-        <tr>
-          <th colspan="2">Name</th>
-          <th>Age</th>
-        </tr>
-        <tr>
-          <td>Arturo</td>
-          <td>Cabrera</td>
-          <td>x?</td>
-        </tr>
-        <tr>
-          <td>Alexander</td>
-          <td>Plaza</td>
-          <td>57</td>
-        </tr>
-      </table>
-      <hr>
-      <table border="1">
-        <tr>
-          <th>Name</th>
-          <td>Arturo</td>
-        </tr>
-        <tr>
-          <th rowspan="2">Tel</th>
-          <td>555-5555</td>
-        </tr>
-        <tr>
-          <td>666-6666</td>
-      </tr>
-      </table>
-      <hr>
-
-      <table border="1">
-        <tr>
-          <th colspan="3">2024</th>
-        </tr>
-        <tr>
-          <td>table</td>
-          <td>th</td>
-          <td>tr</td>
-          <td>td</td>
-        </tr>
-        <tr>
-            <td colspan="2" rowspan="2">HMTL</td>
-            <td>filas</td>
-            <td>01</td>
-          </tr>
-          <tr>
-            <td>columnas</td>
-            <td>02</td>
-          </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-      </table>
+    
 
 </body>
 </html>
