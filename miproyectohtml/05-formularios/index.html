@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Formularios en html</title>
+    </head>
+    <body>
+        <h1>Formularios</h1>
+        <!-- <button onclick="alert('Hola Mundo');">Aceptar</button> -->
+
+        <form action="/page" method="get">
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" required disabled>
+            <br>
+
+            <label for="lastname">Apellido</label>
+            <input type="text" id="lastname" name="lastname" required autofocus>
+            <br>
+            <label for="age">Edad</label>
+            <input type="number" id="age" name="age">
+            <br>
+
+            <h2>Tipo Checkbox</h2>
+            <!-- type=checkbox -->
+            <label for="cookie">galletas</label>
+            <input type="checkbox" id="cookie" name="cookie" checked>
+
+            <label for="icecream">Helados</label>
+            <input type="checkbox" id="icecream" name="icecream" checked>
+
+            <label for="juice">Jugos</label>
+            <input type="checkbox" id="juice" name="juice">
+
+            <h2>Tipo Radio</h2>
+            <!-- type=radio -->
+             <label for="male">Masculino</label>
+             <input type="radio" id="male" name="sex">
+
+             <label for="female">Femenino</label>
+             <input type="radio" id="female" name="sex">
+
+             <label for="binary">No Binario</label>
+             <input type="radio" id="binary" name="sex">
+
+             <h2>Tipo Color</h2>
+             <input type="color">
+             <br>
+
+             <h2>Tipo Fecha</h2>
+             <input type="date">
+             <br>
+             <input type="datetime-local">
+             <br>
+
+             <h2>Tipo email</h2>
+             <input type="email">
+             <br>
+
+             <h2>Tipo File</h2>
+             <input type="file">
+             <br>
+
+             <h2>Tipo Oculto</h2>
+             <input type="hidden" value="esto es secreto" name="secreto">
+             <br>
+
+             <h2>Tipo imagen</h2>
+             <input type="image" src="/00/images/descarga.png">
+             <br>
+
+             <h2>Tipo password</h2>
+             <input type="password">
+             <br>
+
+             <h2>Tipo range</h2>
+             <input type="range">
+             <br>
+
+             <h2>Tipo url</h2>
+             <input type="url">
+            <br>
+
+            <button>Enviar XD</button>
+        </form>
+    </body>
+</html>
