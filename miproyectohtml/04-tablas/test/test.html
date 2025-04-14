@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Prueba de tablas</h1>
-        <table>
+        <table id="planet-table">
             <caption>Tablas de los planetas de la <a href="https://nssdc.gsfc.nasa.gov/planetary/factsheet/">NASA</a></caption>
             <colgroup>
                 <col span="2"/>
@@ -110,5 +110,13 @@
 
             </tbody>
         </table>
+
+        <script>
+            const tabla = document.getElementById("planet-table");
+            console.log(tabla.tBodies);
+
+            console.log(tabla.tHead);
+            console.log(tabla.tBodies[0])
+        </script>
     </body>
 </html>
