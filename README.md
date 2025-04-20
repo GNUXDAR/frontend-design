@@ -54,6 +54,10 @@ Aprender y dominar el diseño, HTML y CSS es fundamental para cualquier desarrol
 <a href='https://www.youtube.com/watch?v=xW3YvUSRTXQ&list=PL-gvMk21wYr45cmMEcqa8-CteI-hlu-1s&index=14' target='_blank'>
   <img width='30%' src='https://img.youtube.com/vi/xW3YvUSRTXQ/mqdefault.jpg' alt='Estructura de HTML ¡Crea tu primera página web!' />
 </a>
+<a href='https://www.youtube.com/watch?v=oKR3vyrieNE&list=PL-gvMk21wYr45cmMEcqa8-CteI-hlu-1s&index=15' target='_blank'>
+  <img width='30%' src='https://img.youtube.com/vi/oKR3vyrieNE/mqdefault.jpg' alt='Estructura de HTML ¡Crea tu primera página web!' />
+</a>
+
 
 
 ![image](https://github.com/GNUXDAR/frontend-design/assets/6179849/c979a8cb-1565-4d5b-ac81-4ed50cb6a726)
