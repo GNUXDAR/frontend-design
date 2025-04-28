@@ -7,12 +7,48 @@
     </head>
     <body>
         <h1>Select</h1>
-
+        <h2>Simple</h2>
         <select name="select">
             <option value="value1">Option 1</option>
             <option value="value2" selected>Option 2</option>
             <option value="value3">Option 3</option>
             <option value="value3">Option 4</option>
           </select>
+
+          <h2>con group</h2>
+          <label for="pais">De que pais nos visita?</label>
+        <select name="pais" id="pais">
+            <option value="">----------</option>
+            <optgroup label="LATAM">
+                <option value="ec">Ecuador</option>
+                <option value="pe">Peru</option>
+                <option value="col">Colombia</option>
+                <option value="ve">Venezuela</option>
+            </optgroup>
+            
+            <optgroup label="EUROPA">
+                <option value="es">España</option>
+                <option value="al">Alemania</option>
+                <option value="fr">Francia</option>
+            </optgroup>
+        </select>
+
+        <h2>con attr multiple y size</h2>
+        <label for="pais">De que pais nos visita?</label>
+        <select name="pais" id="pais" multiple size="3">
+            <option value="">----------</option>
+            <optgroup label="LATAM">
+                <option value="ec">Ecuador</option>
+                <option value="pe">Peru</option>
+                <option value="col">Colombia</option>
+                <option value="ve">Venezuela</option>
+            </optgroup>
+            
+            <optgroup label="EUROPA">
+                <option value="es">España</option>
+                <option value="al">Alemania</option>
+                <option value="fr">Francia</option>
+            </optgroup>
+        </select>
     </body>
 </html>
