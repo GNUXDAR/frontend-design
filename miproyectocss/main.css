@@ -1,0 +1,55 @@
+/* Selectores de tipo: h1, li */
+h1 {
+    color: rgb(255, 21, 0);
+}
+
+/* Cambiar el comportamiento predeterminado de los elementos */
+li {
+    list-style-type: none;
+}
+
+/* elementos li que tengan la clase "especial */
+li.especial {
+    color:orange;
+    font-weight: bold;
+}
+
+/* elementos em que esten dentro de cualquier li */
+li em {
+    color: rgb(255, 0, 170);
+}
+/* elementos span que esten dentro de cualquier p */
+p span {
+    color: red;
+}
+
+/* dar formato aun parrafo que venga directamente a continuacion de un titulo */
+h1 + p {
+  font-size: 150%;
+}
+
+/* FORMATOS SEGUN EL ESTADO */
+/* sin visitar */
+a:link {
+    color: green;
+}
+/* visitados */
+a:visited {
+    color: red;
+}
+
+/* quitar subrayado */
+/* este no se recomienda porque se debe entender que es un enlace */
+/* a {
+    text-decoration: none;
+} */
+a:hover {
+    text-decoration: none;
+}
+
+/* combinacionde selectores y de combinadores */
+body h1 + p .especial {
+  color: yellow;
+  background-color: black;
+  padding: 5px;
+}
