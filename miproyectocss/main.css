@@ -1,3 +1,5 @@
+@import "style.css"; /*at-rules*/
+
 /* Selectores de tipo: h1, li */
 h1 {
     color: rgb(255, 21, 0);
@@ -52,4 +54,32 @@ body h1 + p .especial {
   color: yellow;
   background-color: black;
   padding: 5px;
+}
+
+
+/* Arturo Cabrera: test */
+.header {
+    color: blue;
+    /* border-color: ; */
+    border-bottom: dotted blueviolet;
+}
+h2.header-two {
+    color: rgb(74, 73, 72);
+}
+
+.contact {
+    border: solid purple;
+}
+
+.contact ul li {
+    list-style-type:disc;
+}
+
+h2.title-contact {
+    font-size: 2em;
+    color: rgb(192, 35, 35);
+}
+
+.contact a {
+    color: orange;
 }
