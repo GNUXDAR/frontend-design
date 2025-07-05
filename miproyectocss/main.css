@@ -83,3 +83,19 @@ h2.title-contact {
 .contact a {
     color: orange;
 }
+
+/* pseudoelemento: primera linea del parrafo */
+.letter::first-line {
+    color:red;
+}
+
+/* compbinar pseudoclases y pseudoelementos */
+article p:first-child::first-line {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+/* cambiar contenido con CSS */
+    .box::before {
+    content: "This should show before the other content. ";
+    }
