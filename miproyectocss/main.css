@@ -97,5 +97,10 @@ article p:first-child::first-line {
 
 /* cambiar contenido con CSS */
     .box::before {
-    content: "This should show before the other content. ";
+        content: "This should show before the other content. ";
+    }
+    .box::after {
+        display: block;
+        content: url("https://secure.gravatar.com/avatar/e1b67d7e07486cc964bad92f0cbad96e?s=600");
+        width: 50px;
     }
