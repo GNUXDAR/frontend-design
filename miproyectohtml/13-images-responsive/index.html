@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes Responsives</title>
+</head>
+<body>
+    <h1>Imagenes Responsives</h1>
+
+    <!-- <img 
+    width="100%"
+    srcset="
+            images/mobile.png 320w,
+            images/tablet.png 480w,
+            images/desktop.png 800w"
+    sizes="
+        (max-width: 320px) 280px,
+        (max-width: 480px) 440px,
+        800px
+    "
+    src="images/desktop.png" 
+    alt="Imagen de una chica"> -->
+
+  <picture>
+    <source srcset="images/desktop.png"
+      media="(min-width: 800px)"/>
+    <source srcset="images/tablet.png"
+      media="(min-width: 480px)"/>
+    <img src="images/mobile.png" 
+      alt="Imagen de una chica"/>
+  </picture>
+
+</body>
+</html>
