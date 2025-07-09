@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input</title>
+</head>
+<body>
+    <h1>Input</h1>
+    <form action="">
+        <!-- existen varios inputs para poder utilizar en los formularios -->
+        <input type="text"><!--es el que se crea por default-->
+        <br>
+        <!--selector multiple-->
+        <label for="coffe">Cafe</label><input type="checkbox" id="coffe">
+        <label for="juice">Jugo</label><input type="checkbox" id="juice">
+        <br>
+        <!-- widget de color -->
+        <input type="color">
+        <br>
+        <!-- fechas -->
+        <input type="date">
+        <input type="datetime-local">
+
+    </form>
+
+    <h2>Agrupación de formularios</h2>
+    <form action="" method="get">
+        <h3>Registrese sus gustos personales</h3>
+        <fieldset>
+            <legend>Que genero le gusta?</legend>
+            <div>
+                <input type="radio" name="movie" id="anime">
+                <label for="anime">Anime</label>
+
+                <input type="radio" name="movie" id="american">
+                <label for="american">Americano</label>
+
+                <input type="radio" name="movie" id="koreano">
+                <label for="koreano">Koreano</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Tipo de lectura?</legend>
+            <div>
+                <input type="checkbox" id="manga" name="manga">
+                <label for="manga">manga</label>
+
+                <input type="checkbox" id="manwa" name="manwa">
+                <label for="manwa">manwa</label>
+
+                <input type="checkbox" id="comics" name="comics">
+                <label for="comics">comics</label>
+            </div>
+        </fieldset>
+
+        <p>
+            <button>Aceptar</button>
+        </p>
+        
+
+    </form>
+
+</body>
+</html>

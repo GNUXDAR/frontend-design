@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otros elementos de formulario</title>
+</head>
+<body>
+    <h1>Hote la Rosa de Guadalupe</h1>
+    <form action="/page" method="get">
+        <fieldset>
+            <legend>Elija la habitacion</legend>
+            <div>
+                <input type="radio" id="hab1" name="habitacion">
+                <label for="hab1">Economica</label>
+
+                <input type="radio" id="hab2" name="habitacion">
+                <label for="hab2">Ejecutiva</label>
+
+                <input type="radio" id="hab3" name="habitacion">
+                <label for="hab3">Penthoouse</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Elija su menu</legend>
+            <div>
+                <input type="checkbox" id="desayuno" name="desayuno">
+                <label for="desayuno">Desayuno</label>
+
+                <input type="checkbox" id="almuerzo" name="almuerzo">
+                <label for="almuerzo">Almuerzo</label>
+
+                <input type="checkbox" id="cena" name="cena">
+                <label for="cena">Cena</label>
+
+                <input type="checkbox" id="postre" name="postre">
+                <label for="postre">Postre</label>
+            </div>
+        </fieldset>
+
+        <br>
+        <label for="comentario">Deje su comentario</label>
+        <textarea name="comentario" id="comentario" rows="5" cols="25"></textarea>
+
+        <br>
+
+        <label for="pais">De que pais nos visita?</label>
+        <select name="pais" id="pais" multiple size="3">
+            <option value="">----------</option>
+            <optgroup label="LATAM">
+                <option value="ec">Ecuador</option>
+                <option value="pe">Peru</option>
+                <option value="col">Colombia</option>
+                <option value="ve">Venezuela</option>
+            </optgroup>
+            
+            <optgroup label="EUROPA">
+                <option value="es">España</option>
+                <option value="al">Alemania</option>
+                <option value="fr">Francia</option>
+            </optgroup>
+            
+        </select>
+
+        <br>
+        <button>Aceptar</button>
+    </form>
+    
+</body>
+</html>

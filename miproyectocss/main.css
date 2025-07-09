@@ -1,0 +1,106 @@
+@import "style.css"; /*at-rules*/
+
+/* Selectores de tipo: h1, li */
+h1 {
+    color: rgb(255, 21, 0);
+}
+
+/* Cambiar el comportamiento predeterminado de los elementos */
+li {
+    list-style-type: none;
+}
+
+/* elementos li que tengan la clase "especial */
+li.especial {
+    color:orange;
+    font-weight: bold;
+}
+
+/* elementos em que esten dentro de cualquier li */
+li em {
+    color: rgb(255, 0, 170);
+}
+/* elementos span que esten dentro de cualquier p */
+p span {
+    color: red;
+}
+
+/* dar formato aun parrafo que venga directamente a continuacion de un titulo */
+h1 + p {
+  font-size: 150%;
+}
+
+/* FORMATOS SEGUN EL ESTADO */
+/* sin visitar */
+a:link {
+    color: green;
+}
+/* visitados */
+a:visited {
+    color: red;
+}
+
+/* quitar subrayado */
+/* este no se recomienda porque se debe entender que es un enlace */
+/* a {
+    text-decoration: none;
+} */
+a:hover {
+    text-decoration: none;
+}
+
+/* combinacionde selectores y de combinadores */
+body h1 + p .especial {
+  color: yellow;
+  background-color: black;
+  padding: 5px;
+}
+
+
+/* Arturo Cabrera: test */
+.header {
+    color: blue;
+    /* border-color: ; */
+    border-bottom: dotted blueviolet;
+}
+h2.header-two {
+    color: rgb(74, 73, 72);
+}
+
+.contact {
+    border: solid purple;
+}
+
+.contact ul li {
+    list-style-type:disc;
+}
+
+h2.title-contact {
+    font-size: 2em;
+    color: rgb(192, 35, 35);
+}
+
+.contact a {
+    color: orange;
+}
+
+/* pseudoelemento: primera linea del parrafo */
+.letter::first-line {
+    color:red;
+}
+
+/* compbinar pseudoclases y pseudoelementos */
+article p:first-child::first-line {
+    font-size: 120%;
+    font-weight: bold;
+}
+
+/* cambiar contenido con CSS */
+    .box::before {
+        content: "This should show before the other content. ";
+    }
+    .box::after {
+        display: block;
+        content: url("https://secure.gravatar.com/avatar/e1b67d7e07486cc964bad92f0cbad96e?s=600");
+        width: 50px;
+    }

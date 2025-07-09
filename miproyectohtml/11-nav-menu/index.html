@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación</title>
+</head>
+<body>
+    <h1>Elementos de Navegación</h1>
+    <p>Menu Principal</p>
+    <nav>
+        <a href="">Enlace 1</a>
+        <a href="">Enlace 2</a>
+        <a href="">Enlace 3</a>
+        <a href="">Enlace 4</a>
+    </nav>
+    <hr>
+    <p>Menu Lateral</p>
+    <nav class="menu-lateral">
+        <ul>
+            <li>
+                <a href="">Enlace 1</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">Enlace 2</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">Enlace 3</a>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <a href="">Enlace 4</a>
+            </li>
+        </ul>
+    </nav>
+    <hr>
+
+    <p>Menu Interactivo</p>
+    <menu>
+        <li><button onclick="copy()">Copiar</button></li>
+        <li><button onclick="cut()">Cortar</button></li>
+        <li><button onclick="paste()">Pegar</button></li>
+        <li><button onclick="save()">Guardar</button></li>
+    </menu>
+
+    <script>
+        function copy(){
+            alert("Mensaje Copiado");
+        }
+
+        function cut(){
+            alert("Mensaje Cortado");
+        }
+
+        function paste(){
+            alert("Mensaje Pegado");
+        }
+
+        function save(){
+            alert("Mensaje Guardado");
+        }
+    </script>
+</body>
+</html>

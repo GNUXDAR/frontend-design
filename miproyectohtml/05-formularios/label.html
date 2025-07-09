@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="">
+        <title>Label</title>
+    </head>
+    <body>
+        <h1>Label</h1>
+        <form action="" method="get">
+            <!-- label explicito: manera correcta -->
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre">
+            <br>
+            <!-- label inplicito: evitar -->
+             <label>
+                Apellido
+                <input type="text" name="apellido">
+             </label>
+
+             <p>
+                Este puede estar asociado con un control ya sea mediante la utilizacion del atributo for, o ubicando el control dentro del elemento label. Tal control es llamado "el control etiquetado" del elemento label.
+             </p>
+        </form>
+    </body>
+</html>
