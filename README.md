@@ -21,6 +21,9 @@ Aprender y dominar el diseño, HTML y CSS es fundamental para cualquier desarrol
 
 ### 📹 Vídeos en mi [canal de Youtube](https://youtube.com/gnuxdar?sub_confirmation=1) 📹 
 
+<a href="https://www.youtube.com/watch?v=IG4nRF1rFQU&list=PL-gvMk21wYr45cmMEcqa8-CteI-hlu-1s&index=2" target='_blank'>
+  <img width='30%' src='https://img.youtube.com/vi/IG4nRF1rFQU/mqdefault.jpg' alt='Aprender a estudiar correctramente' />
+  </a>
 <a href='https://www.youtube.com/watch?v=0rDo5ggScUk&list=PL-gvMk21wYr45cmMEcqa8-CteI-hlu-1s&index=4' target='_blank'>
   <img width='30%' src='https://img.youtube.com/vi/0rDo5ggScUk/mqdefault.jpg' alt='Primeros Pasos para Crear tu Propia Página Web' />
 </a>
