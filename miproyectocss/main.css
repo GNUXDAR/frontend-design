@@ -104,3 +104,21 @@ article p:first-child::first-line {
         content: url("https://secure.gravatar.com/avatar/e1b67d7e07486cc964bad92f0cbad96e?s=600");
         width: 50px;
     }
+
+/* combinadores */
+/* combinador hijo */
+.container > p {
+    color: rgb(28, 68, 187);
+    font-size: 15px;
+}
+
+/* combinadores de hermanos adyacentes */
+h1 + p {
+    font-weight: bold;
+    background-color: #333;
+    padding: 0.5em;
+}
+
+div + p {
+    color: pink;
+}
