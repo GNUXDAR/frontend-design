@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imagenes Responsives</title>
+</head>
+<body>
+    <header>
+        <h1 id="title">Imagenes Responsives</h1>
+    </header>
+
+<!-- <img
+    srcset="
+        13-images-responsive/images/mobile.png 320w,
+        13-images-responsive/images/tablet.png 480w,
+        13-images-responsive/images/desktop.png 800w
+    "
+    sizes="(max-width: 320px) 280px,
+           (max-width: 480px) 440px,
+           800px"
+    src="13-images-responsive/images/desktop.png"
+    alt="Imagenes adaptables"
+/> -->
+
+<picture>
+  <source 
+    srcset="13-images-responsive/images/desktop.png"
+    media="(min-width: 800px)"
+  />
+  <source 
+    srcset="13-images-responsive/images/tablet.png"
+    media="(min-width: 480px)"
+  />
+  <img 
+    src="13-images-responsive/images/mobile.png" 
+    alt="Baby Sleeping"
+  />
+</picture>
+
+<!-- practicas -->
+<picture>
+  <source
+  srcset="13-images-responsive/images/desktop.png"
+  media="(min-width: 800px)">
+  <source
+  srcset="13-images-responsive/images/tablet.png"
+  media="(min-width: 480px)">
+  <img src="13-images-responsive/images/mobile.png"
+  >
+</picture>
+
+    <dialog id="miModal" open>
+        <h2>¡Este es un modal sin JavaScript!</h2>
+        <p>Se abre y cierra usando solo HTML.</p>
+        
+        <!-- Forma de cerrar el modal -->
+        <form method="dialog">
+            <button>Cerrar</button>
+        </form>
+    </dialog>
+<script src="script.js"></script>
+</body>
+</html>
