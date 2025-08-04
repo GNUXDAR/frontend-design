@@ -16,5 +16,25 @@
 <body>
     <h1>Colores - RGB Hexadecimales</h1>
     <div class="box"></div>
+
+    <input type="color" id="color" value="#00ff00">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const colorPicker = document.getElementById('color');
+            const box = document.querySelector('.box');
+            
+            // validacion
+            if (!colorPicker || !box) {
+                console.error('No se encontraron los elementos necesarios');
+                return;
+            }
+            colorPicker.value = '#008000';
+
+            colorPicker.addEventListener('input', function() {
+                box.style.backgroundColor = this.value;
+                console.log('Color cambiado a:', this.value);
+            });
+        });
+    </script>
 </body>
 </html>
