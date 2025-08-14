@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Fundamental CSS comprehension</title>
+    <style>
+        body {
+  margin: 0;
+}
+
+html {
+  font-family: 'Helvetica neue', Arial, 'sans serif';
+  font-size: 10px;
+  background-color: #ccc;
+}
+
+/* Selectors to be matched up with rulesets */
+
+.card article img
+.card footer
+.card header
+.card
+
+/* Rulesets to be matched up with selectors */
+
+{
+  width: 35em;
+  height: 22em;
+  margin: 5em auto;
+  background-colour: red;
+  border: 0.2em solid black;
+  border-radius: 1.5em;
+}
+
+{
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0.1), rgba(0,0,0,0));
+  border-radius: 1.5em 1.5em 0 0;
+}
+
+{
+  background-image: linear-gradient(to bottom,rgba(0,0,0,0), rgba(0,0,0,0.1));
+  border-radius: 0 0 1.5em 1.5em;
+}
+
+{
+  max-height: 100%
+  float: right;
+}
+.cardio {
+    background-color: lightblue;
+    text-transform: capitalize;
+    text-decoration: line-through overline underline;
+    text-shadow: 1px 1px 1px red;
+}
+.aqui {
+  line-height: 1.5;
+}
+p {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+p::first-line {
+  letter-spacing: 1.2px;
+  word-spacing: 4px;
+}
+p::selection {
+  color: rgb(177, 5, 20);
+  background-color: lightblue;
+}
+
+/* crear una imagen con css */
+    </style>
+  </head>
+  <body>
+
+  <section class="card">
+    <header>
+      <h2 class="cardio">Arturo cabrera</h2>
+    </header>
+    <article>
+        <p class="aqui">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate reprehenderit aut assumenda officiis mollitia, doloribus nihil dolores quas accusantium aliquid ducimus, iure tempore eum aperiam consectetur deleniti modi fugiat dolore!</p>
+        <p class="cardio">LoreM ipsum dolor sit amet consectetur adipisicing elit. Rerum animi obcaecati sunt nemo iste dolorem eveniet odit reiciendis corporis hic! Nobis, officia tempore at quo laboriosam expedita culpa eaque impedit.</p>
+      <p>50 My Street<br>
+         The Town<br>
+         Gray Peach<br>
+         UK<br>
+         ZO50 1MU<br>
+        <strong>Tel</strong>: 01234 567 890<br>
+        <strong>Mail</strong>: ac@nothere.com</p>
+    </article>
+    <footer>
+      <p>Editing, writing, and web development services</p>
+
+      <div></div>
+      <div class="semicircle"></div>
+    </footer>
+  </section>
+
+  </body>
+</html>
