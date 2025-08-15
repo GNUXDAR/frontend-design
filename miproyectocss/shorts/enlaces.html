@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listas</title>
+    <title>Enlaces</title>
     <style>
         /* VALORES RECOMENDADOS */
         body {
@@ -53,41 +53,41 @@
         }
         
         /* OTROS ESTILOS */
-        .g-shock {
-            a {
-                text-decoration: none;
-                color: lightgray;
-                font-size: 1.3rem;
-                padding: 2px;
-            }
+        /* Selectores desanidados */
+        .g-shock a {
+            text-decoration: none;
+            color: lightgray;
+            font-size: 1.3rem;
+            padding: 2px;
+        }
 
-            a:link {
-                color: gray;
-            }
+        .g-shock a:link {
+            color: gray;
+        }
 
-            a:visited {
-                background-color: lightgray;
-                color: #fff;
-            }
+        .g-shock a:visited {
+            background-color: lightgray;
+            color: #fff;
+        }
 
-            a:focus {
-                background: gray;
-            }
+        .g-shock a:focus {
+            background: gray;
+        }
 
-            a:hover {
-                border-bottom: 1px solid gray;
-                background: lightgray;
-                color: white;
-            }
+        .g-shock a:hover {
+            border-bottom: 1px solid gray;
+            background: lightgray;
+            color: white;
+        }
 
-            a:active {
+        .g-shock a:active {
+        /* Estilos para active */
+        }
 
-            }
-            /* estilos adicionales */
-            .g-shock p::selection {
-                color: lightgray;
-                background: red;
-            }
+        /* Selector adicional */
+        .g-shock::selection {
+            color: #fff;
+            background: #0c9ee6;
         }
 
     </style>
