@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listas</title>
     <style>
+        /* VALORES RECOMENDADOS */
         body {
         width: 300px;
         margin: 0 auto;
@@ -51,6 +52,44 @@
             background: #cdfeaa;
         }
         
+        /* OTROS ESTILOS */
+        .g-shock {
+            a {
+                text-decoration: none;
+                color: lightgray;
+                font-size: 1.3rem;
+                padding: 2px;
+            }
+
+            a:link {
+                color: gray;
+            }
+
+            a:visited {
+                background-color: lightgray;
+                color: #fff;
+            }
+
+            a:focus {
+                background: gray;
+            }
+
+            a:hover {
+                border-bottom: 1px solid gray;
+                background: lightgray;
+                color: white;
+            }
+
+            a:active {
+
+            }
+            /* estilos adicionales */
+            .g-shock p::selection {
+                color: lightgray;
+                background: red;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -58,7 +97,9 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam veritatis velit deserunt cum? Deserunt quas inventore est vero quaerat repellat, obcaecati, aut saepe dolor similique, soluta modi asperiores? Quas.
             <a href="#">Firefox</a> es mejor que <a href="#">Chrome</a>?
         </p>
-        
     </div>
+    <p class="g-shock"> Hay varios navegadores disponibles, tales como <a href="#">Mozilla
+ Firefox</a>, <a href="#">Google Chrome</a> y
+<a href="#">Microsoft Edge</a>.</p>
 </body>
 </html>
