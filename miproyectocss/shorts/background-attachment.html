@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-attachment</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        
+        .subtitle {
+            font-style: italic;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .example {
+            margin-bottom: 40px;
+            padding: 25px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+        
+        .demo-box {
+            height: 300px;
+            overflow: auto;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 18px;
+            line-height: 1.8;
+        }
+        
+        .fixed {
+            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        
+        .scroll {
+            background-image: url('https://images.unsplash.com/photo-1418065460487-3e41a6c84dc5');
+            background-size: cover;
+            background-attachment: scroll;
+        }
+        
+        .local {
+            background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05');
+            background-size: cover;
+            background-attachment: local;
+        }
+        
+        .info-box {
+            background-color: #e8f4fc;
+            padding: 15px;
+            border-left: 5px solid #3498db;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .value {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-weight: bold;
+        }
+        
+        .scroll-text {
+            height: 800px;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 10px;
+        }
+        a {
+            color: #dacaca;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Propiedad background-attachment</h1>
+            <p class="subtitle">Comprendiendo los valores fixed, scroll y local</p>
+        </header>
+        
+        <div class="example">
+            <h2>background-attachment: <span class="value">fixed</span></h2>
+            <div class="info-box">
+                El fondo permanece fijo en la ventana gráfica, incluso al desplazar el contenido.
+            </div>
+            <div class="demo-box fixed">
+                <div class="scroll-text">
+                    <p>Este es un ejemplo de background-attachment: fixed.</p>
+                    <p>Intenta desplazarte hacia abajo para ver cómo el fondo permanece fijo mientras el contenido se mueve.</p>
+                    <p>La imagen de fondo está anclada a la ventana del navegador, no al elemento que contiene el contenido.</p>
+                    <p>Observa cómo la imagen de montañas permanece estática mientras lees este texto.</p>
+                    <p>Sigue desplazándote para ver el efecto completo...</p>
+                    <p>Más contenido aquí para permitir el desplazamiento...</p>
+                    <p>¿Ves cómo la imagen no se mueve?</p>
+                    <p>Este comportamiento es útil para crear efectos visuales interesantes.</p>
+                    <p>¡Sigue desplazándote!</p>
+                    <p>Casi llegas al final...</p>
+                    <p>Este es el final del contenido para este ejemplo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="example">
+            <h2>background-attachment: <span class="value">scroll</span></h2>
+            <div class="info-box">
+                El fondo se desplaza con el elemento que lo contiene. Es el valor por defecto.
+            </div>
+            <div class="demo-box scroll">
+                <div class="scroll-text">
+                    <p>Este es un ejemplo de background-attachment: scroll.</p>
+                    <p>Intenta desplazarte hacia abajo para ver cómo el fondo se mueve con el contenido.</p>
+                    <p>La imagen de fondo está anclada al elemento, no a la ventana del navegador.</p>
+                    <p>Observa cómo la imagen del bosque se desplaza junto con el texto.</p>
+                    <p>Sigue desplazándote para ver el efecto completo...</p>
+                    <p>Más contenido aquí para permitir el desplazamiento...</p>
+                    <p>¿Ves cómo la imagen se mueve con el contenido?</p>
+                    <p>Este es el comportamiento predeterminado de los fondos en CSS.</p>
+                    <p>¡Sigue desplazándote!</p>
+                    <p>Casi llegas al final...</p>
+                    <p>Este es el final del contenido para este ejemplo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="example">
+            <h2>background-attachment: <span class="value">local</span></h2>
+            <div class="info-box">
+                El fondo se desplaza con el contenido del elemento, especialmente útil cuando el elemento tiene su propia barra de desplazamiento.
+            </div>
+            <div class="demo-box local">
+                <div class="scroll-text">
+                    <p>Este es un ejemplo de background-attachment: local.</p>
+                    <p>Intenta desplazarte hacia abajo para ver cómo el fondo se mueve con el contenido.</p>
+                    <p>La imagen de fondo está anclada al contenido del elemento.</p>
+                    <p>Observa cómo la imagen del paisaje se desplaza con el texto.</p>
+                    <p>La diferencia con 'scroll' es sutil pero importante cuando hay elementos con desplazamiento interno.</p>
+                    <p>Sigue desplazándote para ver el efecto completo...</p>
+                    <p>Más contenido aquí para permitir el desplazamiento...</p>
+                    <p>¿Ves cómo la imagen se mueve con el contenido?</p>
+                    <p>Este valor es especialmente útil para elementos con barras de desplazamiento propias.</p>
+                    <p>¡Sigue desplazándote!</p>
+                    <p>Casi llegas al final...</p>
+                    <p>Este es el final del contenido para este ejemplo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Diseñado para demostrar la propiedad CSS background-attachment</p>
+            <p>Intenta desplazar cada sección individualmente para observar los diferentes comportamientos</p>
+            <p>Sigueme para mas contenido</p> 
+            <a href="https://youtube.com/@gnuxdar">tiktok</a> | <a href="https://instagram.com/gnuxdar">Instagram</a> | <a href="https://tiktok.com/@gnuxdar">tiktok</a>
+        </footer>
+    </div>
+</body>
+</html>
