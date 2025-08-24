@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores - RGB Hexadecimales</title>
+    <style>
+        .box {
+            width: 250px;
+            height: 250px;
+            border: 3px solid;
+            background-color: #ff4500;
+        }
+    </style>
+</head>
+<body>
+    <h1>Colores - RGB Hexadecimales</h1>
+    <div class="box"></div>
+
+    <input type="color" id="color" value="#00ff00">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const colorPicker = document.getElementById('color');
+            const box = document.querySelector('.box');
+            
+            // validacion
+            if (!colorPicker || !box) {
+                console.error('No se encontraron los elementos necesarios');
+                return;
+            }
+            colorPicker.value = '#008000';
+
+            colorPicker.addEventListener('input', function() {
+                box.style.backgroundColor = this.value;
+                console.log('Color cambiado a:', this.value);
+            });
+        });
+    </script>
+</body>
+</html>

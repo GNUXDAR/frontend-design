@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinador de Hermanos Generales</title>
+    <style>
+        ul ~ p{
+            background-color: aqua;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Combinador de Hermanos Generales</h1>
+    <p>Este es un parrafo X que por el efecto cascada no entra en la seleccion.</p>
+    <ul>
+        <li>uno</li>
+        <li>dos</li>
+    </ul>
+    <p>Otro parrafo</p>
+    <div>
+        <p>Este parrafo no forma parte de los hermanos</p>
+    </div>
+    <p>pero este si</p>
+
+</body>
+</html>

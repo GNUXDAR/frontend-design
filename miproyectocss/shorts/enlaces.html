@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enlaces</title>
+    <style>
+        /* VALORES RECOMENDADOS */
+        body {
+        width: 300px;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        font-family: sans-serif;
+        }
+
+        p {
+        line-height: 1.4;
+        }
+
+        a {
+        outline: none;
+        text-decoration: none;
+        padding: 2px 1px 0;
+        }
+
+        a:link {
+        color: #265301;
+        }
+
+        a:visited {
+        color: #437a16;
+        }
+
+        a:focus {
+        border-bottom: 1px solid;
+        background: #bae498;
+        }
+
+        a:hover {
+        border-bottom: 1px solid;
+        background: #cdfeaa;
+        }
+
+        a:active {
+        background: #265301;
+        color: #cdfeaa;
+        }
+
+        /* estilos adicionales */
+        p::selection {
+            color: #8e9d83;
+            background: #cdfeaa;
+        }
+        
+        /* OTROS ESTILOS */
+        /* Selectores desanidados */
+        .g-shock a {
+            text-decoration: none;
+            color: lightgray;
+            font-size: 1.3rem;
+            padding: 2px;
+        }
+
+        .g-shock a:link {
+            color: gray;
+        }
+
+        .g-shock a:visited {
+            background-color: lightgray;
+            color: gray;
+        }
+
+        .g-shock a:focus {
+            background: gray;
+            color: lightgray;
+        }
+
+        .g-shock a:hover {
+            border-bottom: 1px solid gray;
+            background: lightgray;
+            color: white;
+        }
+
+        .g-shock a:active {
+        /* Estilos para active */
+        }
+
+        /* Selector adicional */
+        .g-shock::selection {
+            color: #fff;
+            background: #0c9ee6;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero nam veritatis velit deserunt cum? Deserunt quas inventore est vero quaerat repellat, obcaecati, aut saepe dolor similique, soluta modi asperiores? Quas.
+            <a href="#">Firefox</a> es mejor que <a href="#">Chrome</a>?
+        </p>
+    </div>
+    <p class="g-shock"> Hay varios navegadores disponibles, tales como <a href="#">Mozilla
+ Firefox</a>, <a href="#">Google Chrome</a> y
+<a href="#">Microsoft Edge</a>.</p>
+</body>
+</html>
