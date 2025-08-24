@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+    <style>
+        body { 
+            margin: 0; 
+            min-height: 100vh; 
+            display: grid; 
+            place-items: center; 
+            background: #FADE8B;
+        }
+        .heart {
+            width: 180px;
+            height: 180px;
+            background: #D2495C;
+            position: relative;
+            transform: rotate(45deg);
+            border-radius: 0 0 90px 0;
+        }
+        .heart::before,
+        .heart::after {
+            content: '';
+            width: 180px;
+            height: 180px;
+            position: absolute;
+            border-radius: 50%;
+            background: #D2495C;
+        }
+        .heart::before {
+            top: -90px;
+            left: 0;
+        }
+        .heart::after {
+            top: 0;
+            left: -90px;
+        }
+        /* Highlights */
+        .highlight-1,
+        .highlight-2 {
+            position: absolute;
+            background: #F28997;
+            border-radius: 50%;
+            z-index: 2;
+        }
+        .highlight-1 {
+            width: 40px;
+            height: 40px;
+            top: -15%;
+            left: 25%;
+            transform: rotate(-45deg);
+            opacity: 0.8;
+        }
+        .highlight-2 {
+            width: 20px;
+            height: 20px;
+            top: -20%;
+            left: 50%;
+            transform: rotate(-30deg);
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="heart">
+        <div class="highlight-1"></div>
+        <div class="highlight-2"></div>
+    </div>
+</body>
+</html>
