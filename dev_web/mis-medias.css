@@ -1,0 +1,29 @@
+@media (min-width: 320px) and (max-width: 520px) {
+ 
+}
+@media (min-width: 521px) and (max-width: 768px) {
+  
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+}
+
+@media (min-width: 1281px) {
+  
+}
+
+/* Las mejores prácticas para implementar un contenedor en diseño web */
+
+.container {
+    width: 100%;
+    max-width: 1200px; /* o el ancho máximo que prefieras */
+    margin: 0 auto;
+    padding: 0 15px; /* padding lateral para móviles */
+    box-sizing: border-box;
+}
+
