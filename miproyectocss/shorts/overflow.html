@@ -5,16 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desbordamiento</title>
     <style>
-        .container {
-            height: 200px;
+        .container-v {
+            height: 150px;
             border: 2px solid red;
+            background-color: lightgray;
+            margin-bottom: 20px;
             overflow: visible; /*visible, hidden, scroll, auto*/
+        }
+        .container-h {
+            height: 150px;
+            border: 2px solid rgb(20, 69, 202);
+            background-color: rgb(239, 233, 233);
+            margin-bottom: 20px;
+            overflow: hidden; /*visible, hidden, scroll, auto*/
+        }
+        .container-s {
+            height: 150px;
+            border: 2px solid rgb(92, 5, 168);
+            background-color: rgb(228, 225, 225);
+            margin-bottom: 20px;
+            overflow: scroll; /*visible, hidden, scroll, auto*/
+        }
+        .container-a {
+            height: 150px;
+            border: 2px solid rgb(0, 255, 187);
+            background-color: rgb(236, 226, 226);
+            margin-bottom: 20px;
+            overflow: auto; /*visible, hidden, scroll, auto*/
+        }
+        h2  {
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(51, 51, 51);background-color: aquamarine;
         }
     </style>
 </head>
 <body>
-    <h1>Desbordamiento</h1>
-    <div class="container">
+    <h1>Overflow</h1>
+    <h2>Overflow:visible</h2>
+    <div class="container-v">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque illo libero quibusdam, nisi fugit ratione molestias natus? Impedit sint maxime accusantium consequatur. Recusandae fugit iusto ut debitis odio excepturi!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque saepe facilis recusandae temporibus iure! Cupiditate, temporibus quasi dicta tenetur necessitatibus, voluptatem laudantium nostrum, esse assumenda beatae quas labore atque quo.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum impedit aspernatur tenetur provident, blanditiis amet molestiae in nulla libero ad, totam voluptate magnam iure distinctio ipsam pariatur doloribus. Provident, porro.</p>
+    </div>
+    <h2>Overflow:hidden</h2>
+    <div class="container-h">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque illo libero quibusdam, nisi fugit ratione molestias natus? Impedit sint maxime accusantium consequatur. Recusandae fugit iusto ut debitis odio excepturi!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque saepe facilis recusandae temporibus iure! Cupiditate, temporibus quasi dicta tenetur necessitatibus, voluptatem laudantium nostrum, esse assumenda beatae quas labore atque quo.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum impedit aspernatur tenetur provident, blanditiis amet molestiae in nulla libero ad, totam voluptate magnam iure distinctio ipsam pariatur doloribus. Provident, porro.</p>
+    </div>
+    <h2>Overflow:scroll</h2>
+    <div class="container-s">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque illo libero quibusdam, nisi fugit ratione molestias natus? Impedit sint maxime accusantium consequatur. Recusandae fugit iusto ut debitis odio excepturi!</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque saepe facilis recusandae temporibus iure! Cupiditate, temporibus quasi dicta tenetur necessitatibus, voluptatem laudantium nostrum, esse assumenda beatae quas labore atque quo.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum impedit aspernatur tenetur provident, blanditiis amet molestiae in nulla libero ad, totam voluptate magnam iure distinctio ipsam pariatur doloribus. Provident, porro.</p>
+    </div>
+    <h2>Overflow:auto</h2>
+    <div class="container-a">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod cumque illo libero quibusdam, nisi fugit ratione molestias natus? Impedit sint maxime accusantium consequatur. Recusandae fugit iusto ut debitis odio excepturi!</p>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque saepe facilis recusandae temporibus iure! Cupiditate, temporibus quasi dicta tenetur necessitatibus, voluptatem laudantium nostrum, esse assumenda beatae quas labore atque quo.</p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum impedit aspernatur tenetur provident, blanditiis amet molestiae in nulla libero ad, totam voluptate magnam iure distinctio ipsam pariatur doloribus. Provident, porro.</p>
