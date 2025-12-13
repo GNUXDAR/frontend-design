@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estilizando tablas con CSS3</title>
+    <style>
+        table {
+            width: 50vw;
+            border-collapse: collapse;
+            border: 1px solid black;
+            background-color: aliceblue;
+        }
+        /* para que no tome la cabecera, se le da la especificidad de tbody */
+        tbody tr:nth-child(odd) {
+            background-color: #0fd7d4;
+        }
+        tbody tr:nth-child(even) {
+            background-color: #0676c6;
+        }
+    </style>
+</head>
+<body>
+    <h1>Estilizando tablas con CSS3</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Arturo</td>
+                <td>Cabrera</td>
+                <td>gnuxdar@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Meryuris</td>
+                <td>Plaza</td>
+                <td>merys@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Alexander</td>
+                <td>Cabrera</td>
+                <td>alexc@gmail.com</td>
+            </tr>
+            <tr>
+                <td>Alexa</td>
+                <td>Cabrera</td>
+                <td>alexac@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
